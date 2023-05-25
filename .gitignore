@@ -1,0 +1,8 @@
+.vscode/
+build/
+bindings/
+docs/Doxygen/
+
+.vs/
+bin/
+bin-int/
