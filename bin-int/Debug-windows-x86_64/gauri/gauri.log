@@ -1,7 +1,0 @@
-﻿  windows_window.cpp
-Dwmapi.lib(dwmapi.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR이(가) opengl32.lib(OPENGL32.dll)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
-Ws2_32.lib(WS2_32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR이(가) opengl32.lib(OPENGL32.dll)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
-Winmm.lib(WINMM.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR이(가) opengl32.lib(OPENGL32.dll)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
-Version.lib(VERSION.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR이(가) opengl32.lib(OPENGL32.dll)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
-Bcrypt.lib(bcrypt.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR이(가) opengl32.lib(OPENGL32.dll)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
-  gauri.vcxproj -> D:\sangwon\repositories\workspace\game-engine\bin\Debug-windows-x86_64\gauri\gauri.lib
