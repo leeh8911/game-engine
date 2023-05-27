@@ -4,3 +4,5 @@
 [submodule "3rdparty/imgui"]
 	path = 3rdparty/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "gauri"]
+	url = git@github.com:leeh8911/gauri.git
