@@ -7,5 +7,5 @@ docs/Doxygen/
 bin/
 bin-int/
 
-*/bin/
-*/bin-int/
+*/bin/*
+*/bin-int/*
