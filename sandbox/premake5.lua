@@ -28,11 +28,13 @@
     externalincludedirs 
     {
         "%{wks.location}/gauri/3rdparty/spdlog/include",
+        "%{IncludeDir.imgui}",
     }
 
     links
     {
         "gauri",
+        "imgui",
     }
 
     filter "system:windows"

@@ -59,7 +59,7 @@
     <IntDir>..\bin-int\Debug-windows-x86_64\sandbox\</IntDir>
     <TargetName>sandbox</TargetName>
     <TargetExt>.exe</TargetExt>
-    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -67,7 +67,7 @@
     <IntDir>..\bin-int\Release-windows-x86_64\sandbox\</IntDir>
     <TargetName>sandbox</TargetName>
     <TargetExt>.exe</TargetExt>
-    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -75,7 +75,7 @@
     <IntDir>..\bin-int\Dist-windows-x86_64\sandbox\</IntDir>
     <TargetName>sandbox</TargetName>
     <TargetExt>.exe</TargetExt>
-    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -149,6 +149,9 @@
   <ItemGroup>
     <ProjectReference Include="..\gauri\gauri.vcxproj">
       <Project>{9D0D7E0F-0922-A6C0-D2A3-49203E77A2F1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\gauri\3rdparty\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

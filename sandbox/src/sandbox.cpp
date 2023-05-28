@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include "gauri.h"
+#include "imgui.h"
 
 class ExampleLayer : public gauri::Layer
 {
@@ -29,6 +30,17 @@ class ExampleLayer : public gauri::Layer
             }
             GR_TRACE("{0}", (char)e.GetKeyCode());
         }
+    }
+
+    void OnImGuiRender() override
+    {
+        // clang-format off
+        // TheCherno의 Hazel의 경우 DLL이라 설정의 문제가 발생해서 해결해야 했지만, gauri의 경우 StaticLib이라 설정의 문제가 발생하지 않는다.
+        // clang-format on
+
+        ImGui::Begin("Test");
+        ImGui::Text("Hello World!");
+        ImGui::End();
     }
 };
 class Sandbox : public gauri::Application
