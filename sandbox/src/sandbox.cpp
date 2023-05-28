@@ -12,12 +12,23 @@ class ExampleLayer : public gauri::Layer
 
     void OnUpdate() override
     {
-        GR_INFO("ExampleLayer::OnUpdate");
+        if (gauri::Input::IsKeyPressed(GR_KEY_TAB))
+        {
+            GR_INFO("Tab key is pressed (poll)!");
+        }
     }
 
     void OnEvent(gauri::Event &event) override
     {
-        GR_TRACE("ExampleLayer::OnEvent: {0}", event.ToString());
+        if (event.GetEventType() == gauri::EventType::KeyPressed)
+        {
+            gauri::KeyPressedEvent &e = static_cast<gauri::KeyPressedEvent &>(event);
+            if (e.GetKeyCode() == GR_KEY_TAB)
+            {
+                GR_INFO("Tab key is pressed (event)!");
+            }
+            GR_TRACE("{0}", (char)e.GetKeyCode());
+        }
     }
 };
 class Sandbox : public gauri::Application

@@ -4,4 +4,4 @@
 
 ## 진행상황
 
-<https://youtu.be/yuhNj8yGDJQ?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=949>
+<https://youtu.be/zaJGn8pur5I?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=117>
