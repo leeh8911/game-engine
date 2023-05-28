@@ -37,7 +37,6 @@ class Sandbox : public gauri::Application
     Sandbox()
     {
         PushLayer(new ExampleLayer());
-        PushOverlay(new gauri::ImGuiLayer());
     }
     ~Sandbox() override = default;
 
