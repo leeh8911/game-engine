@@ -6,6 +6,10 @@
 
 ### TODO
 
+시작: <https://youtu.be/YZKEjaCnsjU?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=4>
+
+### 0529
+
 시작: <https://www.youtube.com/watch?v=Hoi-Gzk-How&list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&index=23>
 
 ### 0528
