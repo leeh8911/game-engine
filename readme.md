@@ -6,6 +6,10 @@
 
 ### TODO
 
+<https://youtu.be/bwFYXo0VgCc?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
+
+### 0530
+
 시작: <https://youtu.be/YZKEjaCnsjU?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=4>
 
 ### 0529
