@@ -6,12 +6,14 @@
 
 ### TODO
 
-<https://youtu.be/QBCCHm_9HV8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
+<https://youtu.be/BwCqRqqbB1Y?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 
 ### 0530
 
 <https://youtu.be/YZKEjaCnsjU?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=4>
 <https://youtu.be/bwFYXo0VgCc?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
+<https://youtu.be/QBCCHm_9HV8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
+    읽어봐야 함: <https://www.khronos.org/opengl/wiki/Shader_Compilation>
 
 ### 0529
 
