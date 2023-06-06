@@ -6,6 +6,8 @@
 
 ### TODO
 
+<https://youtu.be/NjKv-HWstxA?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
+
 ## 0606
 
 <https://youtu.be/akxevYYWd9g?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=110>
