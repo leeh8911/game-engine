@@ -115,33 +115,33 @@ class ExampleLayer : public gauri::Layer
         m_BlueShader.reset(new gauri::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
     }
 
-    void OnUpdate() override
+    void OnUpdate(gauri::Timestep ts) override
     {
         if (gauri::Input::IsKeyPressed(GR_KEY_LEFT))
         {
-            m_CameraPosition.x -= m_CameraSpeed;
+            m_CameraPosition.x -= m_CameraSpeed * ts;
         }
         else if (gauri::Input::IsKeyPressed(GR_KEY_RIGHT))
         {
-            m_CameraPosition.x += m_CameraSpeed;
+            m_CameraPosition.x += m_CameraSpeed * ts;
         }
 
         if (gauri::Input::IsKeyPressed(GR_KEY_UP))
         {
-            m_CameraPosition.y += m_CameraSpeed;
+            m_CameraPosition.y += m_CameraSpeed * ts;
         }
         else if (gauri::Input::IsKeyPressed(GR_KEY_DOWN))
         {
-            m_CameraPosition.y -= m_CameraSpeed;
+            m_CameraPosition.y -= m_CameraSpeed * ts;
         }
 
         if (gauri::Input::IsKeyPressed(GR_KEY_A))
         {
-            m_CameraRotation += m_CameraRotationSpeed;
+            m_CameraRotation += m_CameraRotationSpeed * ts;
         }
         else if (gauri::Input::IsKeyPressed(GR_KEY_D))
         {
-            m_CameraRotation -= m_CameraRotationSpeed;
+            m_CameraRotation -= m_CameraRotationSpeed * ts;
         }
 
         gauri::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});
@@ -186,7 +186,7 @@ class ExampleLayer : public gauri::Layer
     float m_CameraSpeed = 0.1f;
 
     float m_CameraRotation = 0.f;
-    float m_CameraRotationSpeed = 1.f;
+    float m_CameraRotationSpeed = 10.f;
 };
 class Sandbox : public gauri::Application
 {
