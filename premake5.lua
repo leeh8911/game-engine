@@ -16,6 +16,9 @@ workspace "game_engine"
 	{
 		".editorconfig",
         ".clang-format",
+        ".clang-tidy",
+        "CPPLINT.cfg",
+        "cspell.json",
 	}
     
     flags

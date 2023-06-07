@@ -5,6 +5,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.clang-format = .clang-format
+		.clang-tidy = .clang-tidy
+		CPPLINT.cfg = CPPLINT.cfg
+		cspell.json = cspell.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{15A0C35D-0158-05AB-6A5F-DE065636A09B}"
