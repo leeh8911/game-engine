@@ -23,7 +23,7 @@ class ExampleLayer : public gauri::Layer
                                   0.0f, 0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f};
         // clang-format on
 
-        std::shared_ptr<gauri::VertexBuffer> vertexBuffer;
+        gauri::Ref<gauri::VertexBuffer> vertexBuffer;
         vertexBuffer.reset(gauri::VertexBuffer::Create(vertices, sizeof(vertices)));
 
         gauri::BufferLayout layout = {{gauri::ShaderDataType::Float3, "a_Position"},
@@ -32,7 +32,7 @@ class ExampleLayer : public gauri::Layer
         m_VertexArray->AddVertexBuffer(vertexBuffer);
 
         uint32_t indices[3] = {0, 1, 2};
-        std::shared_ptr<gauri::IndexBuffer> indexBuffer;
+        gauri::Ref<gauri::IndexBuffer> indexBuffer;
         indexBuffer.reset(gauri::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
         m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -45,13 +45,13 @@ class ExampleLayer : public gauri::Layer
                                         0.5f, 0.5f, 0.0f, 
                                        -0.5f, 0.5f, 0.0f};
         // clang-format on
-        std::shared_ptr<gauri::VertexBuffer> squareVB;
+        gauri::Ref<gauri::VertexBuffer> squareVB;
         squareVB.reset(gauri::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
         squareVB->SetLayout({{gauri::ShaderDataType::Float3, "a_Position"}});
         m_SquareVA->AddVertexBuffer(squareVB);
 
         uint32_t squareIndices[6] = {0, 1, 2, 2, 3, 0};
-        std::shared_ptr<gauri::IndexBuffer> suqareIB;
+        gauri::Ref<gauri::IndexBuffer> suqareIB;
         suqareIB.reset(gauri::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
         m_SquareVA->SetIndexBuffer(suqareIB);
 
@@ -200,13 +200,11 @@ class ExampleLayer : public gauri::Layer
     }
 
   private:
-    std::shared_ptr<gauri::Shader> m_Shader = nullptr;
-    std::shared_ptr<gauri::VertexArray> m_VertexArray = nullptr;
-    std::shared_ptr<gauri::VertexBuffer> m_VertexBuffer = nullptr;
-    std::shared_ptr<gauri::IndexBuffer> m_IndexBuffer = nullptr;
+    gauri::Ref<gauri::Shader> m_Shader = nullptr;
+    gauri::Ref<gauri::VertexArray> m_VertexArray = nullptr;
 
-    std::shared_ptr<gauri::Shader> m_FlatColorShader = nullptr;
-    std::shared_ptr<gauri::VertexArray> m_SquareVA = nullptr;
+    gauri::Ref<gauri::Shader> m_FlatColorShader = nullptr;
+    gauri::Ref<gauri::VertexArray> m_SquareVA = nullptr;
 
     gauri::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition{};
