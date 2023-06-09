@@ -8,6 +8,7 @@ IncludeDir["GLFW"] = "%{wks.location}/gauri/3rdparty/glfw/include"
 IncludeDir["Glad"] = "%{wks.location}/gauri/3rdparty/Glad/include"
 IncludeDir["imgui"] = "%{wks.location}/gauri/3rdparty/imgui"
 IncludeDir["glm"] = "%{wks.location}/gauri/3rdparty/glm"
+IncludeDir["stb_image"] = "%{wks.location}/gauri/3rdparty/stb_image"
 IncludeDir["gtest"] = "%{wks.location}/gauri/3rdparty/gtest/googletest/include"
 IncludeDir["gmock"] = "%{wks.location}/gauri/3rdparty/gtest/googlemock/include"
 
