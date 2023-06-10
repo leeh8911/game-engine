@@ -159,6 +159,7 @@ class ExampleLayer : public gauri::Layer
         m_TextureShader.reset(gauri::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
         m_Texture = gauri::Texture2D::Create("assets/textures/Checkerboard.png");
+        m_ChernoLogoTexture = gauri::Texture2D::Create("assets/textures/ChernoLogo.png");
 
         std::dynamic_pointer_cast<gauri::OpenGLShader>(m_TextureShader)->Bind();
         std::dynamic_pointer_cast<gauri::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -217,6 +218,8 @@ class ExampleLayer : public gauri::Layer
         }
         m_Texture->Bind();
         gauri::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+        m_ChernoLogoTexture->Bind();
+        gauri::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
         // Triangle
         // gauri::Renderer::Submit(m_Shader, m_VertexArray);
@@ -249,7 +252,7 @@ class ExampleLayer : public gauri::Layer
     gauri::Ref<gauri::Shader> m_FlatColorShader = nullptr, m_TextureShader = nullptr;
     gauri::Ref<gauri::VertexArray> m_SquareVA = nullptr;
 
-    gauri::Ref<gauri::Texture2D> m_Texture = nullptr;
+    gauri::Ref<gauri::Texture2D> m_Texture = nullptr, m_ChernoLogoTexture = nullptr;
 
     gauri::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition{};
