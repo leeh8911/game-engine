@@ -89,7 +89,7 @@ class ExampleLayer : public gauri::Layer
         }
     )";
 
-        m_Shader.reset(gauri::Shader::Create(vertexSrc, framgmentSrc));
+        m_Shader = gauri::Shader::Create("VertexPosColor", vertexSrc, framgmentSrc);
 
         std::string flatColorShaderVertexSrc = R"(
         #version 330 core
@@ -122,15 +122,15 @@ class ExampleLayer : public gauri::Layer
         }
     )";
 
-        m_FlatColorShader.reset(gauri::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+        m_FlatColorShader = gauri::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-        m_TextureShader.reset(gauri::Shader::Create("assets/shaders/texture.glsl"));
+        auto textureShader = m_ShaderLibrary.Load("assets/shaders/texture.glsl");
 
         m_Texture = gauri::Texture2D::Create("assets/textures/Checkerboard.png");
         m_ChernoLogoTexture = gauri::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-        std::dynamic_pointer_cast<gauri::OpenGLShader>(m_TextureShader)->Bind();
-        std::dynamic_pointer_cast<gauri::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+        std::dynamic_pointer_cast<gauri::OpenGLShader>(textureShader)->Bind();
+        std::dynamic_pointer_cast<gauri::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
     }
 
     void OnUpdate(gauri::Timestep ts) override
@@ -184,10 +184,12 @@ class ExampleLayer : public gauri::Layer
                 gauri::Renderer::Submit(m_FlatColorShader, m_SquareVA, transform);
             }
         }
+        auto textureShader = m_ShaderLibrary.Get("texture");
+
         m_Texture->Bind();
-        gauri::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+        gauri::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
         m_ChernoLogoTexture->Bind();
-        gauri::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+        gauri::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
         // Triangle
         // gauri::Renderer::Submit(m_Shader, m_VertexArray);
@@ -214,10 +216,11 @@ class ExampleLayer : public gauri::Layer
     }
 
   private:
+    gauri::ShaderLibrary m_ShaderLibrary{};
     gauri::Ref<gauri::Shader> m_Shader = nullptr;
     gauri::Ref<gauri::VertexArray> m_VertexArray = nullptr;
 
-    gauri::Ref<gauri::Shader> m_FlatColorShader = nullptr, m_TextureShader = nullptr;
+    gauri::Ref<gauri::Shader> m_FlatColorShader = nullptr;
     gauri::Ref<gauri::VertexArray> m_SquareVA = nullptr;
 
     gauri::Ref<gauri::Texture2D> m_Texture = nullptr, m_ChernoLogoTexture = nullptr;
