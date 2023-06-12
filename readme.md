@@ -6,6 +6,14 @@
 
 ### TODO
 
+[Camera Controllers](https://youtu.be/q7rwMoZQSmw?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=654)
+
+## 0613
+
+[Talk, How to build 2D renderer](https://youtu.be/ULO8JhM9FsQ?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2)
+
+## 0612
+
 <https://youtu.be/Z9LE3ksHEQQ?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 
 ## 0611
