@@ -12,7 +12,7 @@
 class ExampleLayer : public gauri::Layer
 {
   public:
-    ExampleLayer() : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+    ExampleLayer() : Layer("Example"), m_CameraController(1280.0f / 720.f)
     {
         m_VertexArray.reset(gauri::VertexArray::Create());
 
@@ -135,40 +135,14 @@ class ExampleLayer : public gauri::Layer
 
     void OnUpdate(gauri::Timestep ts) override
     {
-        if (gauri::Input::IsKeyPressed(GR_KEY_LEFT))
-        {
-            m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-        }
-        else if (gauri::Input::IsKeyPressed(GR_KEY_RIGHT))
-        {
-            m_CameraPosition.x += m_CameraMoveSpeed * ts;
-        }
+        // Update
+        m_CameraController.OnUpdate(ts);
 
-        if (gauri::Input::IsKeyPressed(GR_KEY_UP))
-        {
-            m_CameraPosition.y += m_CameraMoveSpeed * ts;
-        }
-        else if (gauri::Input::IsKeyPressed(GR_KEY_DOWN))
-        {
-            m_CameraPosition.y -= m_CameraMoveSpeed * ts;
-        }
-
-        if (gauri::Input::IsKeyPressed(GR_KEY_A))
-        {
-            m_CameraRotation += m_CameraRotationSpeed * ts;
-        }
-        else if (gauri::Input::IsKeyPressed(GR_KEY_D))
-        {
-            m_CameraRotation -= m_CameraRotationSpeed * ts;
-        }
-
+        // Render
         gauri::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});
         gauri::RenderCommand::Clear();
 
-        m_Camera.SetPosition(m_CameraPosition);
-        m_Camera.SetRotation(m_CameraRotation);
-
-        gauri::Renderer::BeginScene(m_Camera);
+        gauri::Renderer::BeginScene(m_CameraController.GetCamera());
 
         glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -199,13 +173,7 @@ class ExampleLayer : public gauri::Layer
 
     void OnEvent(gauri::Event &event) override
     {
-        gauri::EventDispatcher dispatcher(event);
-        dispatcher.Dispatch<gauri::KeyPressedEvent>(GR_BIND_EVENT_FN(ExampleLayer::OnKeyPressedEvent));
-    }
-
-    bool OnKeyPressedEvent(gauri::KeyPressedEvent &event)
-    {
-        return false;
+        m_CameraController.OnEvent(event);
     }
 
     void OnImGuiRender() override
@@ -225,12 +193,7 @@ class ExampleLayer : public gauri::Layer
 
     gauri::Ref<gauri::Texture2D> m_Texture = nullptr, m_ChernoLogoTexture = nullptr;
 
-    gauri::OrthographicCamera m_Camera;
-    glm::vec3 m_CameraPosition{};
-    float m_CameraMoveSpeed = 5.0f;
-
-    float m_CameraRotation = 0.f;
-    float m_CameraRotationSpeed = 30.f;
+    gauri::OrthographicCameraController m_CameraController;
 
     float m_SquareSpeed = 1.0f;
 
