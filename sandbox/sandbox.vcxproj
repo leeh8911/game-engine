@@ -142,9 +142,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\sandbox.h" />
+    <ClInclude Include="src\sandbox_2d.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\sandbox.cpp" />
+    <ClCompile Include="src\sandbox_2d.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\gauri\gauri.vcxproj">
@@ -153,6 +155,9 @@
     <ProjectReference Include="..\gauri\3rdparty\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\shaders\flat_color.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

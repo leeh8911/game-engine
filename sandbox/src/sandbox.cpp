@@ -4,17 +4,20 @@
 #include <glm/gtc/type_ptr.hpp>
 
 #include "gauri.h"
+#include "gauri/core/entry_point.h"
 #include "imgui.h"
 
 // TEMP
 #include "platform/opengl/opengl_shader.h"
+
+#include "sandbox_2d.h"
 
 class ExampleLayer : public gauri::Layer
 {
   public:
     ExampleLayer() : Layer("Example"), m_CameraController(1280.0f / 720.f)
     {
-        m_VertexArray.reset(gauri::VertexArray::Create());
+        m_VertexArray = gauri::VertexArray::Create();
 
         // clang-format off
         // triangle {x, y, z}
@@ -36,7 +39,7 @@ class ExampleLayer : public gauri::Layer
         indexBuffer.reset(gauri::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
         m_VertexArray->SetIndexBuffer(indexBuffer);
 
-        m_SquareVA.reset(gauri::VertexArray::Create());
+        m_SquareVA = gauri::VertexArray::Create();
 
         // clang-format off
         // triangle {x, y, z}
@@ -199,12 +202,14 @@ class ExampleLayer : public gauri::Layer
 
     glm::vec3 m_SquareColor = {0.2f, 0.3f, 0.8f};
 };
+
 class Sandbox : public gauri::Application
 {
   public:
     Sandbox()
     {
-        PushLayer(new ExampleLayer());
+        // PushLayer(new ExampleLayer());
+        PushLayer(new Sandbox2D());
     }
     ~Sandbox() override = default;
 
