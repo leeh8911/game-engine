@@ -21,5 +21,7 @@ class Sandbox2D : public gauri::Layer
     gauri::Ref<gauri::VertexArray> m_SquareVA = nullptr;
     gauri::Ref<gauri::Shader> m_FlatColorShader = nullptr;
 
+    gauri::Ref<gauri::Texture2D> m_CheckerboardTexture = nullptr;
+
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
 };
