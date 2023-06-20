@@ -1,5 +1,7 @@
 #include "sandbox_2d.h"
 
+#include <iostream>
+
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -20,24 +22,36 @@ void Sandbox2D::OnDetach()
 
 void Sandbox2D::OnUpdate(gauri::Timestep ts)
 {
+    GR_PROFILE_FUNCTION("Sandbox2D::OnUpdate");
     // Update
-    m_CameraController.OnUpdate(ts);
+    {
+        GR_PROFILE_SCOPE("Sandbox2D::OnUpdate");
+        m_CameraController.OnUpdate(ts);
+    }
 
     // Render
-    gauri::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});
-    gauri::RenderCommand::Clear();
+    {
+        GR_PROFILE_SCOPE("Renderer Prep");
+        gauri::RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});
+        gauri::RenderCommand::Clear();
+    }
 
-    gauri::Renderer2D::BeginScene(m_CameraController.GetCamera());
-    gauri::Renderer2D::DrawQuad({-1.0f, 0.0f}, {0.8f, 0.8f}, {0.8f, 0.2f, 0.3f, 1.0f});
-    gauri::Renderer2D::DrawQuad({0.5f, -0.5f}, {0.5f, 0.75f}, {0.2f, 0.3f, 0.8f, 1.0f});
-    gauri::Renderer2D::DrawQuad({0.0f, 0.0f, -0.1f}, {10.0f, 10.0f}, m_CheckerboardTexture);
-    gauri::Renderer2D::EndScene();
+    {
+        GR_PROFILE_SCOPE("Renderer Draw");
+        gauri::Renderer2D::BeginScene(m_CameraController.GetCamera());
+        gauri::Renderer2D::DrawQuad({-1.0f, 0.0f}, {0.8f, 0.8f}, {0.8f, 0.2f, 0.3f, 1.0f});
+        gauri::Renderer2D::DrawQuad({0.5f, -0.5f}, {0.5f, 0.75f}, {0.2f, 0.3f, 0.8f, 1.0f});
+        gauri::Renderer2D::DrawQuad({0.0f, 0.0f, -0.1f}, {10.0f, 10.0f}, m_CheckerboardTexture);
+        gauri::Renderer2D::EndScene();
+    }
 }
 
 void Sandbox2D::OnImGuiRender()
 {
     ImGui::Begin("Settings");
     ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+    m_ProfileResults.clear();
+
     ImGui::End();
 }
 
