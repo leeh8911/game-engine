@@ -13,21 +13,22 @@ Sandbox2D::Sandbox2D() : Layer("Sandbox2D"), m_CameraController(1280.0f / 720.f)
 
 void Sandbox2D::OnAttach()
 {
+    GR_PROFILE_FUNCTION();
+
     m_CheckerboardTexture = gauri::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
 {
+    GR_PROFILE_FUNCTION();
 }
 
 void Sandbox2D::OnUpdate(gauri::Timestep ts)
 {
-    GR_PROFILE_FUNCTION("Sandbox2D::OnUpdate");
+    GR_PROFILE_FUNCTION();
+
     // Update
-    {
-        GR_PROFILE_SCOPE("Sandbox2D::OnUpdate");
-        m_CameraController.OnUpdate(ts);
-    }
+    m_CameraController.OnUpdate(ts);
 
     // Render
     {
@@ -48,6 +49,8 @@ void Sandbox2D::OnUpdate(gauri::Timestep ts)
 
 void Sandbox2D::OnImGuiRender()
 {
+    GR_PROFILE_FUNCTION();
+
     ImGui::Begin("Settings");
     ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
     m_ProfileResults.clear();
