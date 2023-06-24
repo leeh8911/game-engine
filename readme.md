@@ -6,7 +6,7 @@
 
 ### TODO
 
-<https://youtu.be/42aqVsdcxwU?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2>
+<https://youtu.be/42aqVsdcxwU?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=898>
 
 ## 0623
 
