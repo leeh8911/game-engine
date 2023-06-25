@@ -10,34 +10,32 @@
 
 struct Pillar
 {
-    glm::vec3 TopPosition;
-    glm::vec3 BottomPosition;
-    glm::vec2 TopScale;
-    glm::vec2 BottomScale;
+    glm::vec3 TopPosition = {0.0f, 10.0f, 0.0f};
+    glm::vec3 BottomPosition = {10.0f, 10.0f, 0.0f};
+    glm::vec2 TopScale = {15.0f, 20.0f};
+    glm::vec2 BottomScale = {15.0f, 20.0f};
 };
 
 class Level
 {
   public:
-    Level();
-    ~Level();
-
     void Init();
-    void OnUpdate(gauri::Timestep ts);
 
+    void OnUpdate(gauri::Timestep ts);
     void OnRender();
+
     void OnImGuiRender();
+
+    inline bool IsGameOver() const
+    {
+        return m_GameOver;
+    }
 
     void Reset();
 
     inline Player &GetPlayer()
     {
         return m_Player;
-    }
-
-    inline bool IsGameOver() const
-    {
-        return m_GameOver;
     }
 
   private:

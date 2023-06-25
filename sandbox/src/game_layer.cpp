@@ -78,14 +78,40 @@ void GameLayer::OnImGuiRender()
         ImGui::GetForegroundDrawList()->AddText(m_Font, 48.0f, ImGui::GetWindowPos(), 0xffffffff, scoreStr.c_str());
         break;
     case GameState::MainMenu:
+        auto pos = ImGui::GetWindowPos();
+        auto width = gauri::Application::Get().GetWindow().GetWidth();
+        auto height = gauri::Application::Get().GetWindow().GetHeight();
+        pos.x = width / 2.0f - 100.0f;
+        pos.y += 50.0f;
+        if (m_Blink)
+        {
+            ImGui::GetForegroundDrawList()->AddText(m_Font, 120.f, pos, 0xffffffff, "Press to start");
+        }
         break;
     case GameState::GameOver:
+        auto pos = ImGui::GetWindowPos();
+        auto width = gauri::Application::Get().GetWindow().GetWidth();
+        auto height = gauri::Application::Get().GetWindow().GetHeight();
+        pos.x += width / 2.0f - 300.0f;
+        pos.y += 50.0f;
+        if (m_Blink)
+        {
+            ImGui::GetForegroundDrawList()->AddText(m_Font, 120.0f, pos, 0xffffffff, "Click to Play!");
+        }
+        pos.x += 200.0f;
+        pos.y += 150.0f;
+        uint32_t playerScore = m_Level.GetPlayer().GetScore();
+        std::string scoreStr = std::string("Score: ") + std::to_string(playerScore);
+        ImGui::GetForegroundDrawList()->AddText(m_Font, 48.0f, pos, 0xffffffff, scoreStr.c_str());
         break;
     }
 }
 
-void GameLayer::OnEvent(gauri::Event &)
+void GameLayer::OnEvent(gauri::Event &e)
 {
+    gauri::EventDispatcher dispatcher(e);
+    dispatcher.Dispatch<gauri::WindowResizeEvent>(GR_BIND_EVENT_FN(GameLayer::OnWindowResize));
+    dispatcher.Dispatch<gauri::MouseButtonPressedEvent>(GR_BIND_EVENT_FN(GameLayer::OnMouseButtonPressed));
 }
 
 bool GameLayer::OnMouseButtonPressed(gauri::MouseButtonPressedEvent &e)
