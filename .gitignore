@@ -9,3 +9,5 @@ bin-int/
 
 */bin/*
 */bin-int/*
+
+*-profile-*.json
