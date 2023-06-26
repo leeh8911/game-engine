@@ -118,10 +118,10 @@ void Level::OnRender()
 
     for (auto &pillar : m_Pillars)
     {
-        gauri::Renderer2D::DrawQuad(pillar.TopPosition, pillar.TopScale, glm::radians(180.0f), m_TriangleTexture,
+        gauri::Renderer2D::DrawQuad(pillar.TopPosition, pillar.TopScale, glm::radians(180.0f), m_TriangleTexture, 1.0f,
                                     color);
         gauri::Renderer2D::DrawQuad(pillar.BottomPosition, pillar.BottomScale, glm::radians(0.0f), m_TriangleTexture,
-                                    color);
+                                    1.0f, color);
     }
 
     m_Player.OnRender();
@@ -135,9 +135,13 @@ void Level::OnImGuiRender()
 void Level::CreatePillar(int index, float offset)
 {
     Pillar &pillar = m_Pillars[index];
-    pillar.TopPosition = {offset, Random::Float() * 10.0f + 10.0f};
-    pillar.BottomPosition = {offset, pillar.TopPosition.y - 20.0f};
+
+    pillar.TopPosition.x = offset;
+    pillar.TopPosition.y = Random::Float() * 10.0f + 10.0f;
     pillar.TopPosition.z = index * 0.1f - 0.5f;
+
+    pillar.BottomPosition.x = offset;
+    pillar.BottomPosition.y = pillar.TopPosition.y - 20.0f;
     pillar.BottomPosition.z = index * 0.1f - 0.5f + 0.05f;
 
     float center = Random::Float() * 35.0f - 17.5f;
@@ -209,4 +213,20 @@ bool Level::CollisionTest()
 }
 void Level::GameOver()
 {
+    m_GameOver = true;
+}
+
+void Level::Reset()
+{
+
+    m_GameOver = false;
+
+    m_Player.Reset();
+
+    m_PillarTarget = 30.0f;
+    m_PillarIndex = 0;
+    for (int i = 0; i < 5; ++i)
+    {
+        CreatePillar(i, i * 10.0f);
+    }
 }

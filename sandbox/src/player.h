@@ -18,9 +18,9 @@ class Player
 
     void Reset();
 
-    float GetRotation() const
+    float GetRotation()
     {
-        return m_Rotation;
+        return m_Velocity.y * 4.0f - 90.0f;
     }
     const glm::vec2 &GetPosition() const
     {
@@ -29,7 +29,7 @@ class Player
 
     uint32_t GetScore() const
     {
-        return (uint32_t)(m_Position.x + 10.0f) / 10.0f;
+        return (uint32_t)((m_Position.x + 10.0f) / 10.0f);
     }
 
   private:

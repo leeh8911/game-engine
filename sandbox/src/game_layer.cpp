@@ -72,12 +72,13 @@ void GameLayer::OnImGuiRender()
 
     switch (m_State)
     {
-    case GameState::Play:
+    case GameState::Play: {
         uint32_t playerScore = m_Level.GetPlayer().GetScore();
         std::string scoreStr = std::string("Score: ") + std::to_string(playerScore);
         ImGui::GetForegroundDrawList()->AddText(m_Font, 48.0f, ImGui::GetWindowPos(), 0xffffffff, scoreStr.c_str());
         break;
-    case GameState::MainMenu:
+    }
+    case GameState::MainMenu: {
         auto pos = ImGui::GetWindowPos();
         auto width = gauri::Application::Get().GetWindow().GetWidth();
         auto height = gauri::Application::Get().GetWindow().GetHeight();
@@ -88,7 +89,8 @@ void GameLayer::OnImGuiRender()
             ImGui::GetForegroundDrawList()->AddText(m_Font, 120.f, pos, 0xffffffff, "Press to start");
         }
         break;
-    case GameState::GameOver:
+    }
+    case GameState::GameOver: {
         auto pos = ImGui::GetWindowPos();
         auto width = gauri::Application::Get().GetWindow().GetWidth();
         auto height = gauri::Application::Get().GetWindow().GetHeight();
@@ -104,6 +106,7 @@ void GameLayer::OnImGuiRender()
         std::string scoreStr = std::string("Score: ") + std::to_string(playerScore);
         ImGui::GetForegroundDrawList()->AddText(m_Font, 48.0f, pos, 0xffffffff, scoreStr.c_str());
         break;
+    }
     }
 }
 

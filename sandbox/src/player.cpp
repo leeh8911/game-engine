@@ -33,7 +33,7 @@ Player::Player()
 
 void Player::LoadAssets()
 {
-    m_ShipTexture = gauri::Texture2D::Create("assets/texture/Ship.png");
+    m_ShipTexture = gauri::Texture2D::Create("assets/textures/Ship.png");
 }
 
 void Player::OnUpdate(gauri::Timestep ts)

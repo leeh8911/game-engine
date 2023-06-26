@@ -25,9 +25,9 @@ class ParticleSystem
   private:
     struct Particle
     {
-        glm::vec2 Position;
-        glm::vec2 Velocity;
-        glm::vec4 ColorBegin, ColorEnd;
+        glm::vec2 Position{0};
+        glm::vec2 Velocity{0};
+        glm::vec4 ColorBegin{0}, ColorEnd{0};
         float Rotation = 0.0f;
         float SizeBegin, SizeEnd;
         float LifeTime = 1.0f;
