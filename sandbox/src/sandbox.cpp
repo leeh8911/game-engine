@@ -26,8 +26,7 @@ class ExampleLayer : public gauri::Layer
                                   0.0f, 0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f};
         // clang-format on
 
-        gauri::Ref<gauri::VertexBuffer> vertexBuffer;
-        vertexBuffer.reset(gauri::VertexBuffer::Create(vertices, sizeof(vertices)));
+        gauri::Ref<gauri::VertexBuffer> vertexBuffer = gauri::VertexBuffer::Create(vertices, sizeof(vertices));
 
         gauri::BufferLayout layout = {{gauri::ShaderDataType::Float3, "a_Position"},
                                       {gauri::ShaderDataType::Float4, "a_Color"}};
@@ -35,8 +34,8 @@ class ExampleLayer : public gauri::Layer
         m_VertexArray->AddVertexBuffer(vertexBuffer);
 
         uint32_t indices[3] = {0, 1, 2};
-        gauri::Ref<gauri::IndexBuffer> indexBuffer;
-        indexBuffer.reset(gauri::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+        gauri::Ref<gauri::IndexBuffer> indexBuffer =
+            gauri::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
         m_VertexArray->SetIndexBuffer(indexBuffer);
 
         m_SquareVA = gauri::VertexArray::Create();
@@ -48,15 +47,14 @@ class ExampleLayer : public gauri::Layer
                                         0.5f, 0.5f, 0.0f, 1.0f, 1.0f,
                                        -0.5f, 0.5f, 0.0f, 0.0f, 1.0f};
         // clang-format on
-        gauri::Ref<gauri::VertexBuffer> squareVB;
-        squareVB.reset(gauri::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+        gauri::Ref<gauri::VertexBuffer> squareVB = gauri::VertexBuffer::Create(squareVertices, sizeof(squareVertices));
         squareVB->SetLayout(
             {{gauri::ShaderDataType::Float3, "a_Position"}, {gauri::ShaderDataType::Float2, "a_TexCoord"}});
         m_SquareVA->AddVertexBuffer(squareVB);
 
         uint32_t squareIndices[6] = {0, 1, 2, 2, 3, 0};
-        gauri::Ref<gauri::IndexBuffer> suqareIB;
-        suqareIB.reset(gauri::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+        gauri::Ref<gauri::IndexBuffer> suqareIB =
+            gauri::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
         m_SquareVA->SetIndexBuffer(suqareIB);
 
         std::string vertexSrc = R"(

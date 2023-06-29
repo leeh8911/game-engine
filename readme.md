@@ -6,7 +6,11 @@
 
 ### TODO
 
-<https://youtu.be/biGF6oLxgtQ?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=246>
+<https://youtu.be/Fz1VySWaad8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
+
+## 0630
+
+<https://youtu.be/biGF6oLxgtQ?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1170>
 
 ## 0627
 
