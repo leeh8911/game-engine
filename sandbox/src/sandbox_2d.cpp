@@ -45,11 +45,12 @@ void Sandbox2D::OnUpdate(gauri::Timestep ts)
 
         GR_PROFILE_SCOPE("Renderer Draw");
         gauri::Renderer2D::BeginScene(m_CameraController.GetCamera());
-        gauri::Renderer2D::DrawQuad({-1.0f, 0.0f}, {0.8f, 0.8f}, rotation, {0.8f, 0.2f, 0.3f, 1.0f});
+        gauri::Renderer2D::DrawQuad({-1.0f, 0.0f}, {0.8f, 0.8f}, glm::radians(rotation), {0.8f, 0.2f, 0.3f, 1.0f});
         gauri::Renderer2D::DrawQuad({-1.0f, 0.0f}, {0.8f, 0.8f}, {0.8f, 0.2f, 0.3f, 1.0f});
         gauri::Renderer2D::DrawQuad({0.5f, -0.5f}, {0.5f, 0.75f}, {0.2f, 0.3f, 0.8f, 1.0f});
         gauri::Renderer2D::DrawQuad({0.0f, 0.0f, -0.1f}, {20.0f, 20.0f}, m_CheckerboardTexture, 10.0f);
-        gauri::Renderer2D::DrawQuad({-0.5f, -0.5f, 0.0f}, {1.0f, 1.0f}, rotation, m_CheckerboardTexture, 20.0f);
+        gauri::Renderer2D::DrawQuad({-0.5f, -0.5f, 0.0f}, {1.0f, 1.0f}, glm::radians(rotation), m_CheckerboardTexture,
+                                    20.0f);
         gauri::Renderer2D::EndScene();
 
         gauri::Renderer2D::BeginScene(m_CameraController.GetCamera());
