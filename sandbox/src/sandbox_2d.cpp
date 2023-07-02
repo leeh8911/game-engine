@@ -16,6 +16,9 @@ void Sandbox2D::OnAttach()
     GR_PROFILE_FUNCTION();
 
     m_CheckerboardTexture = gauri::Texture2D::Create("assets/textures/Checkerboard.png");
+    m_SpriteSheet = gauri::Texture2D::Create("assets/game/textures/RPGpack_sheet_2X.png");
+
+    m_TextureStairs = gauri::SubTexture2D::CreateFromCoords(m_SpriteSheet, {7, 6}, {128, 128});
 
     m_Particle.ColorBegin = {254 / 255.0f, 212 / 255.0f, 123 / 255.0f, 1.0f};
     m_Particle.ColorEnd = {254 / 255.0f, 109 / 255.0f, 41 / 255.0f, 1.0f};
@@ -47,6 +50,7 @@ void Sandbox2D::OnUpdate(gauri::Timestep ts)
         gauri::RenderCommand::Clear();
     }
 
+#if (0)
     {
         static float rotation = 0.0f;
         rotation += ts * 20.0f;
@@ -72,6 +76,7 @@ void Sandbox2D::OnUpdate(gauri::Timestep ts)
         }
         gauri::Renderer2D::EndScene();
     }
+#endif
 
     if (gauri::Input::IsMouseButtonPressed(GR_MOUSE_BUTTON_LEFT))
     {
@@ -90,6 +95,10 @@ void Sandbox2D::OnUpdate(gauri::Timestep ts)
 
     m_ParticleSystem.OnUpdate(ts);
     m_ParticleSystem.OnRender(m_CameraController.GetCamera());
+
+    gauri::Renderer2D::BeginScene(m_CameraController.GetCamera());
+    gauri::Renderer2D::DrawQuad({0.0f, 0.0f, 0.5f}, {1.0f, 1.0f}, m_TextureStairs);
+    gauri::Renderer2D::EndScene();
 }
 
 void Sandbox2D::OnImGuiRender()
