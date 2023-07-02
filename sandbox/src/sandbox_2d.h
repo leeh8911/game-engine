@@ -2,6 +2,8 @@
 
 #include "gauri.h"
 
+#include "particle_system.h"
+
 class Sandbox2D : public gauri::Layer
 {
   public:
@@ -32,4 +34,7 @@ class Sandbox2D : public gauri::Layer
     std::vector<ProfileResult> m_ProfileResults;
 
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
+
+    ParticleSystem m_ParticleSystem;
+    ParticleProps m_Particle;
 };
