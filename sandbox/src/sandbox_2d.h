@@ -26,6 +26,8 @@ class Sandbox2D : public gauri::Layer
     gauri::Ref<gauri::Texture2D> m_CheckerboardTexture = nullptr;
     gauri::Ref<gauri::Texture2D> m_SpriteSheet = nullptr;
     gauri::Ref<gauri::SubTexture2D> m_TextureStairs = nullptr;
+    gauri::Ref<gauri::SubTexture2D> m_TextureBarrel = nullptr;
+    gauri::Ref<gauri::SubTexture2D> m_TextureTree = nullptr;
 
     struct ProfileResult
     {
