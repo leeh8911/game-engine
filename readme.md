@@ -6,16 +6,27 @@
 
 ### TODO
 
-<https://youtu.be/FATUxECqhbg?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
+<https://youtu.be/UljMVrQ_zYY?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1178>
+
+## 0705
+<https://youtu.be/UljMVrQ_zYY?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
+
+## 0704
+
+<https://youtu.be/mj7qCwHTtK8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2>
+<https://youtu.be/raj1Y5bF_wk?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1142>
+
+## 0703
+
+<https://youtu.be/q39GnqVhLf8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=8>
 
 ## 0702
 
-<https://youtu.be/q39GnqVhLf8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
-<https://youtu.be/Yw7RpvmqvSE?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1101>
-<https://youtu.be/KKv_pZvn2rM?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
+<https://youtu.be/Yw7RpvmqvSE?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=14>
 
 ## 0701
 
+<https://youtu.be/KKv_pZvn2rM?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 <https://youtu.be/Fz1VySWaad8?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
 <https://youtu.be/-SQ8TlFZHbY?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2>
 
