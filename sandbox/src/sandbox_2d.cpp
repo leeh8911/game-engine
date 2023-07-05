@@ -70,19 +70,6 @@ void Sandbox2D::OnImGuiRender()
 {
     GR_PROFILE_FUNCTION();
 
-    ImGui::Begin("Settings");
-
-    auto stats = gauri::Renderer2D::GetStats();
-    ImGui::Text("Renderer2D Stats:");
-    ImGui::Text("Draw Calls: %d", stats.DrawCalls);
-    ImGui::Text("Quads: %d", stats.QuadCount);
-    ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
-    ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
-    ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
-    m_ProfileResults.clear();
-
-    ImGui::End();
-
     // If you strip some features of, this demo is pretty much equivalent to calling DockSpaceOverViewport()!
     // In most cases you should be able to just call DockSpaceOverViewport() and ignore all the code below!
     // In this specific demo, we are not using DockSpaceOverViewport() because:
@@ -151,35 +138,13 @@ void Sandbox2D::OnImGuiRender()
 
     if (ImGui::BeginMenuBar())
     {
-        if (ImGui::BeginMenu("Options"))
+        if (ImGui::BeginMenu("File"))
         {
             // Disabling fullscreen would allow the window to be moved to the front of other windows,
             // which we can't undo at the moment without finer window depth/z control.
-            ImGui::MenuItem("Fullscreen", NULL, &opt_fullscreen);
-            ImGui::MenuItem("Padding", NULL, &opt_padding);
-            ImGui::Separator();
-
-            if (ImGui::MenuItem("Flag: NoSplit", "", (dockspace_flags & ImGuiDockNodeFlags_NoSplit) != 0))
+            if (ImGui::MenuItem("Exit"))
             {
-                dockspace_flags ^= ImGuiDockNodeFlags_NoSplit;
-            }
-            if (ImGui::MenuItem("Flag: NoResize", "", (dockspace_flags & ImGuiDockNodeFlags_NoResize) != 0))
-            {
-                dockspace_flags ^= ImGuiDockNodeFlags_NoResize;
-            }
-            if (ImGui::MenuItem("Flag: NoDockingInCentralNode", "",
-                                (dockspace_flags & ImGuiDockNodeFlags_NoDockingInCentralNode) != 0))
-            {
-                dockspace_flags ^= ImGuiDockNodeFlags_NoDockingInCentralNode;
-            }
-            if (ImGui::MenuItem("Flag: AutoHideTabBar", "", (dockspace_flags & ImGuiDockNodeFlags_AutoHideTabBar) != 0))
-            {
-                dockspace_flags ^= ImGuiDockNodeFlags_AutoHideTabBar;
-            }
-            if (ImGui::MenuItem("Flag: PassthruCentralNode", "",
-                                (dockspace_flags & ImGuiDockNodeFlags_PassthruCentralNode) != 0, opt_fullscreen))
-            {
-                dockspace_flags ^= ImGuiDockNodeFlags_PassthruCentralNode;
+                gauri::Application::Get().Close();
             }
             ImGui::Separator();
 
@@ -189,6 +154,21 @@ void Sandbox2D::OnImGuiRender()
         }
         ImGui::EndMenuBar();
     }
+
+    ImGui::Begin("Settings");
+
+    auto stats = gauri::Renderer2D::GetStats();
+    ImGui::Text("Renderer2D Stats:");
+    ImGui::Text("Draw Calls: %d", stats.DrawCalls);
+    ImGui::Text("Quads: %d", stats.QuadCount);
+    ImGui::Text("Vertices: %d", stats.GetTotalVertexCount());
+    ImGui::Text("Indices: %d", stats.GetTotalIndexCount());
+    ImGui::ColorEdit4("Square Color", glm::value_ptr(m_SquareColor));
+    m_ProfileResults.clear();
+
+    uint32_t textureID = m_CheckerboardTexture->GetRendererID();
+    ImGui::Image((void *)textureID, ImVec2{256.0f, 256.0f});
+    ImGui::End();
 
     ImGui::End();
 }
