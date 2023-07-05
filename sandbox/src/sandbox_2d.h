@@ -20,6 +20,7 @@ class Sandbox2D : public gauri::Layer
     // Temp
     gauri::Ref<gauri::VertexArray> m_SquareVA = nullptr;
     gauri::Ref<gauri::Shader> m_FlatColorShader = nullptr;
+    gauri::Ref<gauri::FrameBuffer> m_FrameBuffer = nullptr;
 
     gauri::Ref<gauri::Texture2D> m_CheckerboardTexture = nullptr;
 

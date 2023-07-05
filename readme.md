@@ -6,9 +6,15 @@
 
 ### TODO
 
+<https://youtu.be/93bavRgVcwA?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2388>
+
+## 0706
+
+<https://youtu.be/93bavRgVcwA?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 <https://youtu.be/UljMVrQ_zYY?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1178>
 
 ## 0705
+
 <https://youtu.be/UljMVrQ_zYY?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
 
 ## 0704
