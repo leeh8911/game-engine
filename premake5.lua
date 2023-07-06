@@ -41,4 +41,5 @@ group "Core"
     include "gauri"
 
 group "Misc"
+    include "gauri_editor"
     include "sandbox"

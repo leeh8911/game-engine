@@ -15,10 +15,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{145A6C82-8039-EB1D-8951-76F4F5AF517F}</ProjectGuid>
+    <ProjectGuid>{83B0AFB5-6F13-3F5A-1899-771004DB0ADD}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>sandbox</RootNamespace>
+    <RootNamespace>gauri_editor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -55,25 +55,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\sandbox\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\sandbox\</IntDir>
-    <TargetName>sandbox</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\gauri_editor\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\gauri_editor\</IntDir>
+    <TargetName>gauri_editor</TargetName>
     <TargetExt>.exe</TargetExt>
     <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Release-windows-x86_64\sandbox\</OutDir>
-    <IntDir>..\bin-int\Release-windows-x86_64\sandbox\</IntDir>
-    <TargetName>sandbox</TargetName>
+    <OutDir>..\bin\Release-windows-x86_64\gauri_editor\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\gauri_editor\</IntDir>
+    <TargetName>gauri_editor</TargetName>
     <TargetExt>.exe</TargetExt>
     <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Dist-windows-x86_64\sandbox\</OutDir>
-    <IntDir>..\bin-int\Dist-windows-x86_64\sandbox\</IntDir>
-    <TargetName>sandbox</TargetName>
+    <OutDir>..\bin\Dist-windows-x86_64\gauri_editor\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\gauri_editor\</IntDir>
+    <TargetName>gauri_editor</TargetName>
     <TargetExt>.exe</TargetExt>
     <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
@@ -141,11 +141,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\sandbox_2d.h" />
+    <ClInclude Include="src\editor_layer.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\sandbox.cpp" />
-    <ClCompile Include="src\sandbox_2d.cpp" />
+    <ClCompile Include="src\editor_layer.cpp" />
+    <ClCompile Include="src\gauri_editor_app.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\gauri\gauri.vcxproj">
