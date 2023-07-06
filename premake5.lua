@@ -3,7 +3,7 @@ include "Dependencies.lua"
 
 workspace "game_engine"
     architecture "x86_64"
-    startproject "gauri"
+    startproject "gauri_editor"
 
     configurations
     {
