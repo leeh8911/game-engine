@@ -1,7 +1,8 @@
 .vscode/
 build/
 bindings/
-docs/Doxygen/
+docs/Doxygen/html/
+docs/Doxygen/latex/
 
 .vs/
 bin/
