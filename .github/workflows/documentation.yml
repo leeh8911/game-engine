@@ -20,7 +20,7 @@ jobs:
       - name: Create the doxygen
         run: |
           git clone https://github.com/leeh8911/game-engine.git
-          cd game_engine/docs/Doxygen
+          cd game-engine/docs/Doxygen
           doxygen Doxyfile
           cd ../../..
 
@@ -28,7 +28,7 @@ jobs:
         run: |
           mkdir -p ./docs/Doxygen
           rm -r ./docs/Doxygen
-          mv -f ./game_engine/docs/Doxygen ./docs
+          mv -f ./game-engine/docs/Doxygen ./docs
           ls -al ./docs/Doxygen/html
           
       - name: Deploy github pages
