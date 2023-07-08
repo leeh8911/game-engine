@@ -6,7 +6,11 @@
 
 ### TODO
 
-<https://youtu.be/ZVy81M-IST0?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2>
+<https://youtu.be/Z-CILn2w9K0?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2>
+
+## 0709
+
+<https://youtu.be/ZVy81M-IST0?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1187>
 
 ## 0708
 
