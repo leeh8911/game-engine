@@ -24,6 +24,9 @@ class EditorLayer : public Layer
     Ref<Shader> m_FlatColorShader = nullptr;
     Ref<FrameBuffer> m_FrameBuffer = nullptr;
 
+    Ref<Scene> m_ActiveScene = nullptr;
+    entt::entity m_SquareEntity;
+
     Ref<Texture2D> m_CheckerboardTexture = nullptr;
 
     bool m_ViewportFocused = false;

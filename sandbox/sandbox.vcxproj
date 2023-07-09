@@ -59,7 +59,7 @@
     <IntDir>..\bin-int\Debug-windows-x86_64\sandbox\</IntDir>
     <TargetName>sandbox</TargetName>
     <TargetExt>.exe</TargetExt>
-    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;..\gauri\3rdparty\entt\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -67,7 +67,7 @@
     <IntDir>..\bin-int\Release-windows-x86_64\sandbox\</IntDir>
     <TargetName>sandbox</TargetName>
     <TargetExt>.exe</TargetExt>
-    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;..\gauri\3rdparty\entt\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -75,7 +75,7 @@
     <IntDir>..\bin-int\Dist-windows-x86_64\sandbox\</IntDir>
     <TargetName>sandbox</TargetName>
     <TargetExt>.exe</TargetExt>
-    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>..\gauri\3rdparty\spdlog\include;..\gauri\3rdparty\imgui;..\gauri\3rdparty\glm;..\gauri\3rdparty\entt\include;$(ExternalIncludePath)</ExternalIncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
