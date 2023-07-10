@@ -25,7 +25,7 @@ class EditorLayer : public Layer
     Ref<FrameBuffer> m_FrameBuffer = nullptr;
 
     Ref<Scene> m_ActiveScene = nullptr;
-    entt::entity m_SquareEntity;
+    Entity m_SquareEntity;
 
     Ref<Texture2D> m_CheckerboardTexture = nullptr;
 
