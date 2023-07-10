@@ -21,7 +21,7 @@
 <text text-anchor="start" x="8" y="-180.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Ref&lt; Shader &gt; m_FlatColorShader</text>
 <text text-anchor="start" x="8" y="-169.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Ref&lt; FrameBuffer &gt; m_FrameBuffer</text>
 <text text-anchor="start" x="8" y="-158.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Ref&lt; Scene &gt; m_ActiveScene</text>
-<text text-anchor="start" x="8" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; entt::entity m_SquareEntity</text>
+<text text-anchor="start" x="8" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Entity m_SquareEntity</text>
 <text text-anchor="start" x="8" y="-136.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Ref&lt; Texture2D &gt; m_CheckerboardTexture</text>
 <text text-anchor="start" x="8" y="-125.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool m_ViewportFocused</text>
 <text text-anchor="start" x="8" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool m_ViewportHovered</text>
