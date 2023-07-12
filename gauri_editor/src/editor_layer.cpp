@@ -169,8 +169,8 @@ void EditorLayer::OnImGuiRender()
         ImGui::Separator();
     }
 
-    ImGui::DragFloat("Camera Transform",
-                     glm::value_ptr(m_CameraEntity.GetComponent<TransformComponent>().Transform[3]));
+    ImGui::DragFloat3("Camera Transform",
+                      glm::value_ptr(m_CameraEntity.GetComponent<TransformComponent>().Transform[3]));
 
     if (ImGui::Checkbox("Camera A", &m_PrimaryCamera))
     {
