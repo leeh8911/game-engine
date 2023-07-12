@@ -459,8 +459,8 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        ImGui::Separator();</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    }</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    ImGui::DragFloat(<span class="stringliteral">&quot;Camera Transform&quot;</span>,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                     glm::value_ptr(<a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.GetComponent&lt;TransformComponent&gt;().Transform[3]));</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    ImGui::DragFloat3(<span class="stringliteral">&quot;Camera Transform&quot;</span>,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                      glm::value_ptr(<a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.GetComponent&lt;TransformComponent&gt;().Transform[3]));</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (ImGui::Checkbox(<span class="stringliteral">&quot;Camera A&quot;</span>, &amp;<a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>))</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
