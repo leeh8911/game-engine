@@ -143,10 +143,6 @@ void EditorLayer::OnImGuiRender()
             {
                 Application::Get().Close();
             }
-            ImGui::Separator();
-
-            if (ImGui::MenuItem("Close", NULL, false, dockspaceOpen != NULL))
-                dockspaceOpen = false;
             ImGui::EndMenu();
         }
         ImGui::EndMenuBar();
@@ -179,7 +175,12 @@ void EditorLayer::OnImGuiRender()
         m_CameraEntity.GetComponent<CameraComponent>().Primary = m_PrimaryCamera;
         m_SecondCamera.GetComponent<CameraComponent>().Primary = !m_PrimaryCamera;
     }
-
+    {
+        auto &camera = m_SecondCamera.GetComponent<CameraComponent>().Camera;
+        float orthoSize = camera.GetOrthographicSize();
+        if (ImGui::DragFloat("Second Camera Ortho Size", &orthoSize))
+            camera.SetOrthographicSize(orthoSize);
+    }
     ImGui::End();
 
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{0, 0});
@@ -190,13 +191,8 @@ void EditorLayer::OnImGuiRender()
     Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused || !m_ViewportHovered);
 
     ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
-    if (m_ViewportSize != *(glm::vec2 *)&viewportPanelSize && viewportPanelSize.x > 0 && viewportPanelSize.y > 0)
-    {
-        m_FrameBuffer->Resize((uint32_t)viewportPanelSize.x, (uint32_t)viewportPanelSize.y);
-        m_ViewportSize = {viewportPanelSize.x, viewportPanelSize.y};
+    m_ViewportSize = {viewportPanelSize.x, viewportPanelSize.y};
 
-        m_CameraController.OnResize(viewportPanelSize.x, viewportPanelSize.y);
-    }
     uint32_t textureID = m_FrameBuffer->GetColorAttachmentRendererID();
     ImGui::Image((void *)textureID, ImVec2{m_ViewportSize.x, m_ViewportSize.y}, ImVec2{0, 1}, ImVec2{1, 0});
     ImGui::End();
