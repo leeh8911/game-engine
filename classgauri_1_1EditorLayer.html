@@ -162,10 +162,10 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00012">12</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                         : Layer(<span class="stringliteral">&quot;EditorLayer&quot;</span>), <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>(1280.0f / 720.f)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00010">10</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                         : Layer(<span class="stringliteral">&quot;EditorLayer&quot;</span>), <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>(1280.0f / 720.f)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a03ea6ae9717b55b2a9f8f1288dc47840"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">gauri::EditorLayer::m_CameraController</a></div><div class="ttdeci">OrthographicCameraController m_CameraController</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00020">editor_layer.h:20</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -219,38 +219,80 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00016">16</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    GR_PROFILE_FUNCTION();</div>
+<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00014">14</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    GR_PROFILE_FUNCTION();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a02a32885b969ce89e4fbecd8423cbb81">m_CheckerboardTexture</a> = Texture2D::Create(<span class="stringliteral">&quot;assets/textures/Checkerboard.png&quot;</span>);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a02a32885b969ce89e4fbecd8423cbb81">m_CheckerboardTexture</a> = Texture2D::Create(<span class="stringliteral">&quot;assets/textures/Checkerboard.png&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    FrameBufferSpecification fbSpec;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    fbSpec.Width = 1280;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    fbSpec.Height = 720;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a> = FrameBuffer::Create(fbSpec);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    FrameBufferSpecification fbSpec;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    fbSpec.Width = 1280;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    fbSpec.Height = 720;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a> = FrameBuffer::Create(fbSpec);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a> = CreateRef&lt;Scene&gt;();</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a> = CreateRef&lt;Scene&gt;();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// Entity</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">auto</span> square = <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;CreateEntity(<span class="stringliteral">&quot;Green Square&quot;</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    square.AddComponent&lt;SpriteRendererComponent&gt;(glm::vec4{0.0f, 1.0f, 0.0f, 1.0f});</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a> = square;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a> = <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;CreateEntity(<span class="stringliteral">&quot;Camera Entity&quot;</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.AddComponent&lt;CameraComponent&gt;();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a> = <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;CreateEntity(<span class="stringliteral">&quot;Clip-Space Entity&quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">auto</span> &amp;cc = <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a>.AddComponent&lt;CameraComponent&gt;();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    cc.Primary = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">// Entity</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">auto</span> square = <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;CreateEntity(<span class="stringliteral">&quot;Green Square&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    square.AddComponent&lt;SpriteRendererComponent&gt;(glm::vec4{0.0f, 1.0f, 0.0f, 1.0f});</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a> = square;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a> = <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;CreateEntity(<span class="stringliteral">&quot;Camera Entity&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.AddComponent&lt;CameraComponent&gt;();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a> = <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;CreateEntity(<span class="stringliteral">&quot;Clip-Space Entity&quot;</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">auto</span> &amp;cc = <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a>.AddComponent&lt;CameraComponent&gt;();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    cc.Primary = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">class </span>CameraController : <span class="keyword">public</span> ScriptableEntity</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> OnCreate()</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> OnDestroy()</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgauri_1_1EditorLayer.html#a13cdac218c24a54cafd8ae6af8ee45ef">OnUpdate</a>(Timestep ts)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">auto</span> &amp;transform = GetComponent&lt;TransformComponent&gt;().Transform;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordtype">float</span> speed = 5.0f;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_A))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                transform[3][0] -= speed * ts;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_D))</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                transform[3][0] += speed * ts;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_W))</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                transform[3][1] += speed * ts;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_S))</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                transform[3][1] -= speed * ts;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.AddComponent&lt;NativeScriptComponent&gt;().Bind&lt;CameraController&gt;();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a02a32885b969ce89e4fbecd8423cbb81"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a02a32885b969ce89e4fbecd8423cbb81">gauri::EditorLayer::m_CheckerboardTexture</a></div><div class="ttdeci">Ref&lt; Texture2D &gt; m_CheckerboardTexture</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00034">editor_layer.h:34</a></div></div>
+<div class="ttc" id="aclassgauri_1_1EditorLayer_html_a13cdac218c24a54cafd8ae6af8ee45ef"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a13cdac218c24a54cafd8ae6af8ee45ef">gauri::EditorLayer::OnUpdate</a></div><div class="ttdeci">void OnUpdate(Timestep ts) override</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8cpp_source.html#l00080">editor_layer.cpp:80</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a3478723232919e16cec42e976d74cc98"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">gauri::EditorLayer::m_SquareEntity</a></div><div class="ttdeci">Entity m_SquareEntity</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00028">editor_layer.h:28</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a674f3babf5816a94c79a5b8d885f528d"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">gauri::EditorLayer::m_CameraEntity</a></div><div class="ttdeci">Entity m_CameraEntity</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00029">editor_layer.h:29</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a775d77c17fdb0e1526613cc5196e5f60"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">gauri::EditorLayer::m_SecondCamera</a></div><div class="ttdeci">Entity m_SecondCamera</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00030">editor_layer.h:30</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_aab50fd8053df90ee9629168233a7e005"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">gauri::EditorLayer::m_ActiveScene</a></div><div class="ttdeci">Ref&lt; Scene &gt; m_ActiveScene</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00027">editor_layer.h:27</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_aed44121143d9bc6450c00efb0e16240d"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">gauri::EditorLayer::m_FrameBuffer</a></div><div class="ttdeci">Ref&lt; FrameBuffer &gt; m_FrameBuffer</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00025">editor_layer.h:25</a></div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classgauri_1_1EditorLayer_a56743b3b2eaeaed03e30123051861eff_cgraph.svg" width="475" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="aee587dee65b6af95e34553418f6324fb"></a>
@@ -276,10 +318,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00042">42</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    GR_PROFILE_FUNCTION();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00075">75</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    GR_PROFILE_FUNCTION();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -307,41 +349,47 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00047">47</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    GR_PROFILE_FUNCTION();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Resize</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (FrameBufferSpecification spec = <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;GetSpecification();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x &gt; 0.0f &amp;&amp; <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y &gt; 0.0f &amp;&amp; <span class="comment">// zero sized framebuffer is invalid</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        (spec.Width != <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x || spec.Height != <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y))</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;Resize((uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, (uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>.OnResize(<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;OnViewportResize((uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, (uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Update</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">m_ViewportFocused</a>)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>.OnUpdate(ts);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Render</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    Renderer2D::ResetStats();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;Bind();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    RenderCommand::Clear();</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Update scene</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;OnUpdate(ts);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;Unbind();</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00080">80</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    GR_PROFILE_FUNCTION();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Resize</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (FrameBufferSpecification spec = <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;GetSpecification();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x &gt; 0.0f &amp;&amp; <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y &gt; 0.0f &amp;&amp; <span class="comment">// zero sized framebuffer is invalid</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        (spec.Width != <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x || spec.Height != <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y))</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;Resize((uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, (uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>.OnResize(<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;OnViewportResize((uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, (uint32_t)<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Update</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">m_ViewportFocused</a>)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>.OnUpdate(ts);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Render</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    Renderer2D::ResetStats();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;Bind();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    RenderCommand::SetClearColor({0.1f, 0.1f, 0.1f, 1});</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    RenderCommand::Clear();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Update scene</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">m_ActiveScene</a>-&gt;OnUpdate(ts);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;Unbind();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_aad6fbdf2cdabcf0cb5818d6d1f873da3"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">gauri::EditorLayer::m_ViewportFocused</a></div><div class="ttdeci">bool m_ViewportFocused</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00036">editor_layer.h:36</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_aba5a201026b8ef906ffebd1e99c0986b"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">gauri::EditorLayer::m_ViewportSize</a></div><div class="ttdeci">glm::vec2 m_ViewportSize</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00038">editor_layer.h:38</a></div></div>
-</div><!-- fragment -->
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classgauri_1_1EditorLayer_a13cdac218c24a54cafd8ae6af8ee45ef_icgraph.svg" width="475" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a0ef45ba01458f29faaaa12336e619ff0"></a>
@@ -367,129 +415,129 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00080">80</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    GR_PROFILE_FUNCTION();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> dockspaceOpen = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> opt_fullscreen = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> opt_padding = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// We are using the ImGuiWindowFlags_NoDocking flag to make the parent window not dockable into,</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// because it would be confusing to have two docking targets within each others.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span> (opt_fullscreen)</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keyword">const</span> ImGuiViewport *viewport = ImGui::GetMainViewport();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        ImGui::SetNextWindowPos(viewport-&gt;WorkPos);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        ImGui::SetNextWindowSize(viewport-&gt;WorkSize);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        ImGui::SetNextWindowViewport(viewport-&gt;ID);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                        ImGuiWindowFlags_NoMove;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        dockspace_flags &amp;= ~ImGuiDockNodeFlags_PassthruCentralNode;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// When using ImGuiDockNodeFlags_PassthruCentralNode, DockSpace() will render our background</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// and handle the pass-thru hole, so we ask Begin() to not render a background.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (dockspace_flags &amp; ImGuiDockNodeFlags_PassthruCentralNode)</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        window_flags |= ImGuiWindowFlags_NoBackground;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// Important: note that we proceed even if Begin() returns false (aka window is collapsed).</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// This is because we want to keep our DockSpace() active. If a DockSpace() is inactive,</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// all active windows docked into it will lose their parent and become undocked.</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// We cannot preserve the docking relationship between an active window and an inactive docking, otherwise</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// any change of dockspace/settings would lead to windows being stuck in limbo and never being visible.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span> (!opt_padding)</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    ImGui::Begin(<span class="stringliteral">&quot;DockSpace Demo&quot;</span>, &amp;dockspaceOpen, window_flags);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (!opt_padding)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        ImGui::PopStyleVar();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00113">113</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    GR_PROFILE_FUNCTION();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> dockspaceOpen = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> opt_fullscreen = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> opt_padding = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">static</span> ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// We are using the ImGuiWindowFlags_NoDocking flag to make the parent window not dockable into,</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// because it would be confusing to have two docking targets within each others.</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ImGuiWindowFlags window_flags = ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">if</span> (opt_fullscreen)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        ImGui::PopStyleVar(2);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Submit the DockSpace</span></div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    ImGuiIO &amp;io = ImGui::GetIO();</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span> (io.ConfigFlags &amp; ImGuiConfigFlags_DockingEnable)</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        ImGuiID dockspace_id = ImGui::GetID(<span class="stringliteral">&quot;MyDockSpace&quot;</span>);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span> (ImGui::BeginMenuBar())</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="keywordflow">if</span> (ImGui::BeginMenu(<span class="stringliteral">&quot;File&quot;</span>))</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;            <span class="comment">// Disabling fullscreen would allow the window to be moved to the front of other windows,</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;            <span class="comment">// which we can&#39;t undo at the moment without finer window depth/z control.</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;            <span class="keywordflow">if</span> (ImGui::MenuItem(<span class="stringliteral">&quot;Exit&quot;</span>))</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                Application::Get().Close();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            ImGui::EndMenu();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        ImGui::EndMenuBar();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    ImGui::Begin(<span class="stringliteral">&quot;Settings&quot;</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keyword">auto</span> stats = Renderer2D::GetStats();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Renderer2D Stats:&quot;</span>);</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Draw Calls: %d&quot;</span>, stats.DrawCalls);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Quads: %d&quot;</span>, stats.QuadCount);</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Vertices: %d&quot;</span>, stats.GetTotalVertexCount());</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Indices: %d&quot;</span>, stats.GetTotalIndexCount());</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a>)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        ImGui::Separator();</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">auto</span> &amp;tag = <a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a>.GetComponent&lt;TagComponent&gt;().Tag;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        ImGui::Text(<span class="stringliteral">&quot;%s&quot;</span>, tag.c_str());</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="keyword">auto</span> &amp;squareColor = <a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a>.GetComponent&lt;SpriteRendererComponent&gt;().Color;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ImGui::ColorEdit4(<span class="stringliteral">&quot;Square Color&quot;</span>, glm::value_ptr(squareColor));</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        ImGui::Separator();</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    ImGui::DragFloat3(<span class="stringliteral">&quot;Camera Transform&quot;</span>,</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                      glm::value_ptr(<a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.GetComponent&lt;TransformComponent&gt;().Transform[3]));</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span> (ImGui::Checkbox(<span class="stringliteral">&quot;Camera A&quot;</span>, &amp;<a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>))</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.GetComponent&lt;CameraComponent&gt;().Primary = <a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a>.GetComponent&lt;CameraComponent&gt;().Primary = !<a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keyword">auto</span> &amp;camera = <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a>.GetComponent&lt;CameraComponent&gt;().Camera;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordtype">float</span> orthoSize = camera.GetOrthographicSize();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">if</span> (ImGui::DragFloat(<span class="stringliteral">&quot;Second Camera Ortho Size&quot;</span>, &amp;orthoSize))</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            camera.SetOrthographicSize(orthoSize);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    ImGui::End();</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> ImGuiViewport *viewport = ImGui::GetMainViewport();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        ImGui::SetNextWindowPos(viewport-&gt;WorkPos);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        ImGui::SetNextWindowSize(viewport-&gt;WorkSize);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        ImGui::SetNextWindowViewport(viewport-&gt;ID);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize |</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                        ImGuiWindowFlags_NoMove;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        window_flags |= ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        dockspace_flags &amp;= ~ImGuiDockNodeFlags_PassthruCentralNode;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// When using ImGuiDockNodeFlags_PassthruCentralNode, DockSpace() will render our background</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">// and handle the pass-thru hole, so we ask Begin() to not render a background.</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordflow">if</span> (dockspace_flags &amp; ImGuiDockNodeFlags_PassthruCentralNode)</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        window_flags |= ImGuiWindowFlags_NoBackground;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// Important: note that we proceed even if Begin() returns false (aka window is collapsed).</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// This is because we want to keep our DockSpace() active. If a DockSpace() is inactive,</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// all active windows docked into it will lose their parent and become undocked.</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// We cannot preserve the docking relationship between an active window and an inactive docking, otherwise</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// any change of dockspace/settings would lead to windows being stuck in limbo and never being visible.</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">if</span> (!opt_padding)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    ImGui::Begin(<span class="stringliteral">&quot;DockSpace Demo&quot;</span>, &amp;dockspaceOpen, window_flags);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">if</span> (!opt_padding)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        ImGui::PopStyleVar();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span> (opt_fullscreen)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        ImGui::PopStyleVar(2);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Submit the DockSpace</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    ImGuiIO &amp;io = ImGui::GetIO();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (io.ConfigFlags &amp; ImGuiConfigFlags_DockingEnable)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        ImGuiID dockspace_id = ImGui::GetID(<span class="stringliteral">&quot;MyDockSpace&quot;</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (ImGui::BeginMenuBar())</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">if</span> (ImGui::BeginMenu(<span class="stringliteral">&quot;File&quot;</span>))</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="comment">// Disabling fullscreen would allow the window to be moved to the front of other windows,</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="comment">// which we can&#39;t undo at the moment without finer window depth/z control.</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">if</span> (ImGui::MenuItem(<span class="stringliteral">&quot;Exit&quot;</span>))</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                Application::Get().Close();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            ImGui::EndMenu();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        ImGui::EndMenuBar();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    ImGui::Begin(<span class="stringliteral">&quot;Settings&quot;</span>);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{0, 0});</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    ImGui::Begin(<span class="stringliteral">&quot;Viewport&quot;</span>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">m_ViewportFocused</a> = ImGui::IsWindowFocused();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5">m_ViewportHovered</a> = ImGui::IsWindowHovered();</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    Application::Get().GetImGuiLayer()-&gt;BlockEvents(!<a class="code" href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">m_ViewportFocused</a> || !<a class="code" href="classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5">m_ViewportHovered</a>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keyword">auto</span> stats = Renderer2D::GetStats();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Renderer2D Stats:&quot;</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Draw Calls: %d&quot;</span>, stats.DrawCalls);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Quads: %d&quot;</span>, stats.QuadCount);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Vertices: %d&quot;</span>, stats.GetTotalVertexCount());</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    ImGui::Text(<span class="stringliteral">&quot;Indices: %d&quot;</span>, stats.GetTotalIndexCount());</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a> = {viewportPanelSize.x, viewportPanelSize.y};</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    uint32_t textureID = <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;GetColorAttachmentRendererID();</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    ImGui::Image((<span class="keywordtype">void</span> *)textureID, ImVec2{<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y}, ImVec2{0, 1}, ImVec2{1, 0});</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    ImGui::End();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    ImGui::PopStyleVar();</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    ImGui::End();</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a>)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        ImGui::Separator();</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keyword">auto</span> &amp;tag = <a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a>.GetComponent&lt;TagComponent&gt;().Tag;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        ImGui::Text(<span class="stringliteral">&quot;%s&quot;</span>, tag.c_str());</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keyword">auto</span> &amp;squareColor = <a class="code" href="classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98">m_SquareEntity</a>.GetComponent&lt;SpriteRendererComponent&gt;().Color;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        ImGui::ColorEdit4(<span class="stringliteral">&quot;Square Color&quot;</span>, glm::value_ptr(squareColor));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        ImGui::Separator();</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    }</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    ImGui::DragFloat3(<span class="stringliteral">&quot;Camera Transform&quot;</span>,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                      glm::value_ptr(<a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.GetComponent&lt;TransformComponent&gt;().Transform[3]));</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">if</span> (ImGui::Checkbox(<span class="stringliteral">&quot;Camera A&quot;</span>, &amp;<a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>))</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a674f3babf5816a94c79a5b8d885f528d">m_CameraEntity</a>.GetComponent&lt;CameraComponent&gt;().Primary = <a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a>.GetComponent&lt;CameraComponent&gt;().Primary = !<a class="code" href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">m_PrimaryCamera</a>;</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    {</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keyword">auto</span> &amp;camera = <a class="code" href="classgauri_1_1EditorLayer.html#a775d77c17fdb0e1526613cc5196e5f60">m_SecondCamera</a>.GetComponent&lt;CameraComponent&gt;().Camera;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordtype">float</span> orthoSize = camera.GetOrthographicSize();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">if</span> (ImGui::DragFloat(<span class="stringliteral">&quot;Second Camera Ortho Size&quot;</span>, &amp;orthoSize))</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            camera.SetOrthographicSize(orthoSize);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    ImGui::End();</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{0, 0});</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    ImGui::Begin(<span class="stringliteral">&quot;Viewport&quot;</span>);</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; </div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">m_ViewportFocused</a> = ImGui::IsWindowFocused();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5">m_ViewportHovered</a> = ImGui::IsWindowHovered();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    Application::Get().GetImGuiLayer()-&gt;BlockEvents(!<a class="code" href="classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3">m_ViewportFocused</a> || !<a class="code" href="classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5">m_ViewportHovered</a>);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a> = {viewportPanelSize.x, viewportPanelSize.y};</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    uint32_t textureID = <a class="code" href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">m_FrameBuffer</a>-&gt;GetColorAttachmentRendererID();</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    ImGui::Image((<span class="keywordtype">void</span> *)textureID, ImVec2{<a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.x, <a class="code" href="classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b">m_ViewportSize</a>.y}, ImVec2{0, 1}, ImVec2{1, 0});</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    ImGui::End();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    ImGui::PopStyleVar();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    ImGui::End();</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;}</div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a70e042b4133d5d120cde03674f22ab3e"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a70e042b4133d5d120cde03674f22ab3e">gauri::EditorLayer::m_PrimaryCamera</a></div><div class="ttdeci">bool m_PrimaryCamera</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00032">editor_layer.h:32</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a82a931bcbd70343ee44fd52f06fdb5e5"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5">gauri::EditorLayer::m_ViewportHovered</a></div><div class="ttdeci">bool m_ViewportHovered</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00037">editor_layer.h:37</a></div></div>
 </div><!-- fragment -->
@@ -519,10 +567,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00204">204</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;{</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>.OnEvent(event);</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="editor__layer_8cpp_source.html#l00237">237</a> of file <a class="el" href="editor__layer_8cpp_source.html">editor_layer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;{</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <a class="code" href="classgauri_1_1EditorLayer.html#a03ea6ae9717b55b2a9f8f1288dc47840">m_CameraController</a>.OnEvent(event);</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
