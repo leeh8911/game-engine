@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['gauri_5',['gauri',['../namespacegauri.html',1,'']]],
-  ['gauri_5feditor_5fapp_2ecpp_6',['gauri_editor_app.cpp',['../gauri__editor__app_8cpp.html',1,'']]],
-  ['gaurieditor_7',['GauriEditor',['../classgauri_1_1GauriEditor.html',1,'gauri::GauriEditor'],['../classgauri_1_1GauriEditor.html#a5a3f92433156985835767f7b0b25b2e4',1,'gauri::GauriEditor::GauriEditor()']]]
+  ['editor_5flayer_2ecpp_2',['editor_layer.cpp',['../editor__layer_8cpp.html',1,'']]],
+  ['editor_5flayer_2eh_3',['editor_layer.h',['../editor__layer_8h.html',1,'']]],
+  ['editorlayer_4',['EditorLayer',['../classgauri_1_1EditorLayer.html#afe74996c7f66adbca66cbd4b49247b12',1,'gauri::EditorLayer::EditorLayer()'],['../classgauri_1_1EditorLayer.html',1,'gauri::EditorLayer']]],
+  ['examplelayer_5',['ExampleLayer',['../classExampleLayer.html',1,'ExampleLayer'],['../classExampleLayer.html#a199ad822f707990b69e998a9ed7df5bb',1,'ExampleLayer::ExampleLayer()']]]
 ];

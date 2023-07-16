@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['_7eeditorlayer_73',['~EditorLayer',['../classgauri_1_1EditorLayer.html#ac9e66c4659e566e68b2a7230af9e6306',1,'gauri::EditorLayer']]],
-  ['_7egaurieditor_74',['~GauriEditor',['../classgauri_1_1GauriEditor.html#aac8e0ccb906c4a76a91d55c2162342cc',1,'gauri::GauriEditor']]],
-  ['_7esandbox_75',['~Sandbox',['../classSandbox.html#abd0ca8d8bddfe73f799fa5df457bb9e8',1,'Sandbox']]],
-  ['_7esandbox2d_76',['~Sandbox2D',['../classSandbox2D.html#a53b53c9b6e6e244536b661d610810fcf',1,'Sandbox2D']]]
+  ['sandbox_83',['Sandbox',['../classSandbox.html#a414860b7f66f97746dfda9564bdbf2eb',1,'Sandbox']]],
+  ['sandbox2d_84',['Sandbox2D',['../classSandbox2D.html#a553ef54041bf832607144395e5fd2bc8',1,'Sandbox2D']]],
+  ['scenehierarchypanel_85',['SceneHierarchyPanel',['../classgauri_1_1SceneHierarchyPanel.html#a4143a0f497c972176277c07d6f792ae9',1,'gauri::SceneHierarchyPanel::SceneHierarchyPanel()=default'],['../classgauri_1_1SceneHierarchyPanel.html#a233397278fcd56deb207b8fc4f27f1e3',1,'gauri::SceneHierarchyPanel::SceneHierarchyPanel(Ref&lt; Scene &gt; &amp;scene)']]],
+  ['setcontext_86',['SetContext',['../classgauri_1_1SceneHierarchyPanel.html#a073f2d95cd8d8b04975b724388ce29b9',1,'gauri::SceneHierarchyPanel']]]
 ];

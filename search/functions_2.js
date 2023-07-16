@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gaurieditor_65',['GauriEditor',['../classgauri_1_1GauriEditor.html#a5a3f92433156985835767f7b0b25b2e4',1,'gauri::GauriEditor']]]
+  ['editorlayer_75',['EditorLayer',['../classgauri_1_1EditorLayer.html#afe74996c7f66adbca66cbd4b49247b12',1,'gauri::EditorLayer']]],
+  ['examplelayer_76',['ExampleLayer',['../classExampleLayer.html#a199ad822f707990b69e998a9ed7df5bb',1,'ExampleLayer']]]
 ];
