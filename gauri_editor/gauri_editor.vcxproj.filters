@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{89AF369E-F58E-B539-FEA6-40106A051C9B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gauri_editor">
+      <UniqueIdentifier>{D6903912-C21F-C3DB-6B3E-D7D657ACD381}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gauri_editor\panels">
+      <UniqueIdentifier>{88C82BED-F4D5-59D3-7DBC-55BEE9C8258A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gauri_editor">
+      <UniqueIdentifier>{FA56D0C8-E64F-EF1A-0F82-D49FFBD9CE26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gauri_editor\panels">
+      <UniqueIdentifier>{2CBEE9C2-98F5-315A-A1FF-957D0DB65853}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\gauri_editor\editor_layer.h">
+      <Filter>include\gauri_editor</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gauri_editor\panels\scene_hierarchy_panel.h">
+      <Filter>include\gauri_editor\panels</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\gauri_editor\editor_layer.cpp">
+      <Filter>src\gauri_editor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gauri_editor\panels\scene_hierarchy_panel.cpp">
+      <Filter>src\gauri_editor\panels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gauri_editor_app.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

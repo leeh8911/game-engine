@@ -17,6 +17,7 @@
 
     files
     {
+        "include/**.h",
         "src/**.h",
         "src/**.cpp",
     }
@@ -24,6 +25,7 @@
     includedirs
     {
         "%{wks.location}/gauri/include",
+        "%{wks.location}/gauri_editor/include",
     }
     externalincludedirs 
     {

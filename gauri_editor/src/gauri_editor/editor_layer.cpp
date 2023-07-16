@@ -1,4 +1,4 @@
-#include "editor_layer.h"
+#include "gauri_editor/editor_layer.h"
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -73,6 +73,8 @@ void EditorLayer::OnAttach()
 
     m_CameraEntity.AddComponent<NativeScriptComponent>().Bind<CameraController>();
     m_SecondCamera.AddComponent<NativeScriptComponent>().Bind<CameraController>();
+
+    m_SceneHierarchyPanel.SetContext(m_ActiveScene);
 }
 
 void EditorLayer::OnDetach()
@@ -184,6 +186,8 @@ void EditorLayer::OnImGuiRender()
         ImGui::EndMenuBar();
     }
 
+    m_SceneHierarchyPanel.OnImGuiRender();
+
     ImGui::Begin("Settings");
 
     auto stats = Renderer2D::GetStats();
@@ -230,7 +234,7 @@ void EditorLayer::OnImGuiRender()
     m_ViewportSize = {viewportPanelSize.x, viewportPanelSize.y};
 
     uint32_t textureID = m_FrameBuffer->GetColorAttachmentRendererID();
-    ImGui::Image((void *)textureID, ImVec2{m_ViewportSize.x, m_ViewportSize.y}, ImVec2{0, 1}, ImVec2{1, 0});
+    ImGui::Image((void *)(textureID), ImVec2{m_ViewportSize.x, m_ViewportSize.y}, ImVec2{0, 1}, ImVec2{1, 0});
     ImGui::End();
     ImGui::PopStyleVar();
 

@@ -10,7 +10,7 @@
 // TEMP
 #include "platform/opengl/opengl_shader.h"
 
-#include "editor_layer.h"
+#include "gauri_editor/editor_layer.h"
 
 namespace gauri
 {
