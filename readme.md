@@ -6,11 +6,14 @@
 
 ### TODO
 
+<https://youtu.be/oESRecjuLNY?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1>
+
+## 0718
+
 <https://youtu.be/PsyGmsIgp9M?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 
 ## 0717
 
-<https://youtu.be/u3yq8s3KuSE?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 <https://youtu.be/8JqcXYbzPJc?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 <https://youtu.be/RIMt_6agUiU?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=2>
 <https://youtu.be/u3yq8s3KuSE?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
