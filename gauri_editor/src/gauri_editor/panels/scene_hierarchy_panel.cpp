@@ -65,6 +65,7 @@ void SceneHierarchyPanel::DrawEntityNode(Entity entity)
 }
 void SceneHierarchyPanel::DrawComponents(Entity entity)
 {
+    // TODO: Component UI refactoring
     if (entity.HasComponent<TagComponent>())
     {
         auto &tag = entity.GetComponent<TagComponent>().Tag;
@@ -152,6 +153,16 @@ void SceneHierarchyPanel::DrawComponents(Entity entity)
                 }
                 ImGui::Checkbox("Fixed Aspect Ratio", &cameraComponent.FixedAspectRatio);
             }
+            ImGui::TreePop();
+        }
+    }
+    if (entity.HasComponent<SpriteRendererComponent>())
+    {
+        if (ImGui::TreeNodeEx((void *)typeid(SpriteRendererComponent).hash_code(), ImGuiTreeNodeFlags_DefaultOpen,
+                              "Sprite Renderer"))
+        {
+            auto &src = entity.GetComponent<SpriteRendererComponent>();
+            ImGui::ColorEdit4("Color", glm::value_ptr(src.Color));
             ImGui::TreePop();
         }
     }
