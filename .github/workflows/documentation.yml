@@ -20,6 +20,7 @@ jobs:
       - name: Create the doxygen
         run: |
           git clone https://github.com/leeh8911/game-engine.git --recursive --depth=1
+          git pull origin main
           cd game-engine/docs/Doxygen
           doxygen Doxyfile
           cd ../../..
