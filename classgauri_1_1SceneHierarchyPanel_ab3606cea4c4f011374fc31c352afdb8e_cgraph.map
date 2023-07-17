@@ -1,4 +1,5 @@
 <map id="gauri::SceneHierarchyPanel::OnImGuiRender" name="gauri::SceneHierarchyPanel::OnImGuiRender">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,316,32"/>
-<area shape="rect" id="node2" href="$classgauri_1_1SceneHierarchyPanel.html#ac786ab8a880c239274af1ce3a26351af" title=" " alt="" coords="364,5,679,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,316,57"/>
+<area shape="rect" id="node2" href="$classgauri_1_1SceneHierarchyPanel.html#a9144740cb48b4a524479ec129857d898" title=" " alt="" coords="364,5,688,32"/>
+<area shape="rect" id="node3" href="$classgauri_1_1SceneHierarchyPanel.html#ac786ab8a880c239274af1ce3a26351af" title=" " alt="" coords="369,56,683,83"/>
 </map>
