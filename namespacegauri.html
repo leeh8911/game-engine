@@ -87,10 +87,124 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:afd9399fc349c8e2f2c0377351d7460a5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegauri.html#afd9399fc349c8e2f2c0377351d7460a5">DrawVec3Control</a> (const std::string &amp;label, glm::vec3 &amp;values, float resetValue=0.0f, float columnWidth=100.0f)</td></tr>
+<tr class="separator:afd9399fc349c8e2f2c0377351d7460a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2590e67f2b1b481052f22143d6be7005"><td class="memItemLeft" align="right" valign="top">Application *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegauri.html#a2590e67f2b1b481052f22143d6be7005">CreateApplication</a> ()</td></tr>
 <tr class="separator:a2590e67f2b1b481052f22143d6be7005"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afd9399fc349c8e2f2c0377351d7460a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9399fc349c8e2f2c0377351d7460a5">&#9670;&nbsp;</a></span>DrawVec3Control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void gauri::DrawVec3Control </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>label</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">glm::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>values</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>resetValue</em> = <code>0.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>columnWidth</em> = <code>100.0f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="scene__hierarchy__panel_8cpp_source.html#l00068">68</a> of file <a class="el" href="scene__hierarchy__panel_8cpp_source.html">scene_hierarchy_panel.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ImGui::PushID(label.c_str());</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ImGui::Columns(2);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ImGui::SetColumnWidth(0, columnWidth);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    ImGui::Text(label.c_str());</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ImGui::NextColumn();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    ImGui::PushMultiItemsWidths(3, ImGui::CalcItemWidth());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{0, 0});</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">float</span> lineHeight = GImGui-&gt;Font-&gt;FontSize + GImGui-&gt;Style.FramePadding.y * 2.0f;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ImVec2 buttonSize = {lineHeight + 3.0f, lineHeight};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{0.8f, 0.1f, 0.15f, 1.0f});</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{0.9f, 0.2f, 0.2f, 1.0f});</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{0.8f, 0.1f, 0.15f, 1.0f});</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;X&quot;</span>, buttonSize))</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        values.x = resetValue;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    ImGui::PopStyleColor(3);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    ImGui::DragFloat(<span class="stringliteral">&quot;##X&quot;</span>, &amp;values.x, 0.1f, 0.0f, 0.0f, <span class="stringliteral">&quot;%.2f&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    ImGui::PopItemWidth();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{0.2f, 0.7f, 0.2f, 1.0f});</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{0.3f, 0.8f, 0.3f, 1.0f});</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{0.2f, 0.7f, 0.2f, 1.0f});</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;Y&quot;</span>, buttonSize))</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        values.y = resetValue;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    ImGui::PopStyleColor(3);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ImGui::DragFloat(<span class="stringliteral">&quot;##Y&quot;</span>, &amp;values.y, 0.1f, 0.0f, 0.0f, <span class="stringliteral">&quot;%.2f&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    ImGui::PopItemWidth();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{0.1f, 0.25f, 0.8f, 1.0f});</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{0.2f, 0.35f, 0.9f, 1.0f});</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{0.1f, 0.25f, 0.8f, 1.0f});</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">if</span> (ImGui::Button(<span class="stringliteral">&quot;Z&quot;</span>, buttonSize))</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        values.z = resetValue;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    ImGui::PopStyleColor(3);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    ImGui::DragFloat(<span class="stringliteral">&quot;##Z&quot;</span>, &amp;values.z, 0.1f, 0.0f, 0.0f, <span class="stringliteral">&quot;%.2f&quot;</span>);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    ImGui::PopItemWidth();</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    ImGui::SameLine();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    ImGui::PopStyleVar();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    ImGui::Columns(1);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    ImGui::PopID();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="namespacegauri_afd9399fc349c8e2f2c0377351d7460a5_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+</div>
+
+</div>
+</div>
 <a id="a2590e67f2b1b481052f22143d6be7005"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2590e67f2b1b481052f22143d6be7005">&#9670;&nbsp;</a></span>CreateApplication()</h2>
 

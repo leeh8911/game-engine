@@ -254,32 +254,32 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> OnCreate()</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">auto</span> &amp;transform = GetComponent&lt;TransformComponent&gt;().Transform;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            transform[3][0] = rand() % 10 - 5.0f;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">auto</span> &amp;translation = GetComponent&lt;TransformComponent&gt;().Translation;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            translation.x = rand() % 10 - 5.0f;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> OnDestroy()</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgauri_1_1EditorLayer.html#a13cdac218c24a54cafd8ae6af8ee45ef">OnUpdate</a>(Timestep ts)</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">auto</span> &amp;transform = GetComponent&lt;TransformComponent&gt;().Transform;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keyword">auto</span> &amp;translation = GetComponent&lt;TransformComponent&gt;().Translation;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordtype">float</span> speed = 5.0f;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_A))</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                transform[3][0] -= speed * ts;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                translation.x -= speed * ts;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_D))</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                transform[3][0] += speed * ts;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                translation.x += speed * ts;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_W))</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                transform[3][1] += speed * ts;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                translation.y += speed * ts;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">if</span> (Input::IsKeyPressed(GR_KEY_S))</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                transform[3][1] -= speed * ts;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                translation.y -= speed * ts;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            }</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    };</div>
@@ -297,7 +297,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_aab50fd8053df90ee9629168233a7e005"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#aab50fd8053df90ee9629168233a7e005">gauri::EditorLayer::m_ActiveScene</a></div><div class="ttdeci">Ref&lt; Scene &gt; m_ActiveScene</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00029">editor_layer.h:29</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_adae4d692ad47fdefb159fc2d60d0e5ef"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#adae4d692ad47fdefb159fc2d60d0e5ef">gauri::EditorLayer::m_SceneHierarchyPanel</a></div><div class="ttdeci">SceneHierarchyPanel m_SceneHierarchyPanel</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00045">editor_layer.h:45</a></div></div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_aed44121143d9bc6450c00efb0e16240d"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#aed44121143d9bc6450c00efb0e16240d">gauri::EditorLayer::m_FrameBuffer</a></div><div class="ttdeci">Ref&lt; FrameBuffer &gt; m_FrameBuffer</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00027">editor_layer.h:27</a></div></div>
-<div class="ttc" id="aclassgauri_1_1SceneHierarchyPanel_html_a073f2d95cd8d8b04975b724388ce29b9"><div class="ttname"><a href="classgauri_1_1SceneHierarchyPanel.html#a073f2d95cd8d8b04975b724388ce29b9">gauri::SceneHierarchyPanel::SetContext</a></div><div class="ttdeci">void SetContext(const Ref&lt; Scene &gt; &amp;scene)</div><div class="ttdef"><b>Definition:</b> <a href="scene__hierarchy__panel_8cpp_source.html#l00015">scene_hierarchy_panel.cpp:15</a></div></div>
+<div class="ttc" id="aclassgauri_1_1SceneHierarchyPanel_html_a073f2d95cd8d8b04975b724388ce29b9"><div class="ttname"><a href="classgauri_1_1SceneHierarchyPanel.html#a073f2d95cd8d8b04975b724388ce29b9">gauri::SceneHierarchyPanel::SetContext</a></div><div class="ttdeci">void SetContext(const Ref&lt; Scene &gt; &amp;scene)</div><div class="ttdef"><b>Definition:</b> <a href="scene__hierarchy__panel_8cpp_source.html#l00016">scene_hierarchy_panel.cpp:16</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -529,7 +529,7 @@ Here is the caller graph for this function:</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    ImGui::End();</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;}</div>
 <div class="ttc" id="aclassgauri_1_1EditorLayer_html_a82a931bcbd70343ee44fd52f06fdb5e5"><div class="ttname"><a href="classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5">gauri::EditorLayer::m_ViewportHovered</a></div><div class="ttdeci">bool m_ViewportHovered</div><div class="ttdef"><b>Definition:</b> <a href="editor__layer_8h_source.html#l00039">editor_layer.h:39</a></div></div>
-<div class="ttc" id="aclassgauri_1_1SceneHierarchyPanel_html_ab3606cea4c4f011374fc31c352afdb8e"><div class="ttname"><a href="classgauri_1_1SceneHierarchyPanel.html#ab3606cea4c4f011374fc31c352afdb8e">gauri::SceneHierarchyPanel::OnImGuiRender</a></div><div class="ttdeci">void OnImGuiRender()</div><div class="ttdef"><b>Definition:</b> <a href="scene__hierarchy__panel_8cpp_source.html#l00019">scene_hierarchy_panel.cpp:19</a></div></div>
+<div class="ttc" id="aclassgauri_1_1SceneHierarchyPanel_html_ab3606cea4c4f011374fc31c352afdb8e"><div class="ttname"><a href="classgauri_1_1SceneHierarchyPanel.html#ab3606cea4c4f011374fc31c352afdb8e">gauri::SceneHierarchyPanel::OnImGuiRender</a></div><div class="ttdeci">void OnImGuiRender()</div><div class="ttdef"><b>Definition:</b> <a href="scene__hierarchy__panel_8cpp_source.html#l00020">scene_hierarchy_panel.cpp:20</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">

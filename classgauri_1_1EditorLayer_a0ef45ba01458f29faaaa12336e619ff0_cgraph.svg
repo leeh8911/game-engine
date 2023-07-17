@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 742;
+var viewWidth = 909;
 var viewHeight = 66;
 var sectionId = 'dynsection-4';
 </script>
@@ -54,7 +54,7 @@ var sectionId = 'dynsection-4';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>gauri::EditorLayer::OnImGuiRender</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-62 738,-62 738,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-62 905,-62 905,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
@@ -94,20 +94,35 @@ var sectionId = 'dynsection-4';
 <path fill="none" stroke="midnightblue" d="M455.25,-37.09C463.57,-37.67 472,-38.26 480.41,-38.84"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="480.42,-42.35 490.64,-39.56 480.91,-35.37 480.42,-42.35"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node">
-<title>Node4</title>
-<g id="a_node4"><a xlink:href="classgauri_1_1SceneHierarchyPanel.html#ac786ab8a880c239274af1ce3a26351af" target="_top" xlink:title=" ">
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="classgauri_1_1SceneHierarchyPanel.html#ac786ab8a880c239274af1ce3a26351af" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="494.5,-0.5 494.5,-19.5 730.5,-19.5 730.5,-0.5 494.5,-0.5"/>
 <text text-anchor="middle" x="612.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">gauri::SceneHierarchyPanel::DrawEntityNode</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
-<title>Node2&#45;&gt;Node4</title>
+<!-- Node2&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node2&#45;&gt;Node5</title>
 <path fill="none" stroke="midnightblue" d="M455.25,-20.91C464.8,-20.25 474.49,-19.57 484.11,-18.9"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="484.39,-22.39 494.12,-18.2 483.9,-15.4 484.39,-22.39"/>
+</g>
+<!-- Node4 -->
+<g id="node4" class="node">
+<title>Node4</title>
+<g id="a_node4"><a xlink:href="namespacegauri.html#afd9399fc349c8e2f2c0377351d7460a5" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="770,-38.5 770,-57.5 901,-57.5 901,-38.5 770,-38.5"/>
+<text text-anchor="middle" x="835.5" y="-45.5" font-family="Helvetica,sans-Serif" font-size="10.00">gauri::DrawVec3Control</text>
+</a>
+</g>
+</g>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M734.02,-48C742.78,-48 751.46,-48 759.83,-48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="759.87,-51.5 769.87,-48 759.87,-44.5 759.87,-51.5"/>
 </g>
 </g>
 </svg>
