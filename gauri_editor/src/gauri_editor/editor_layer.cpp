@@ -2,8 +2,9 @@
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <imgui.h>
 
-#include "imgui.h"
+#include "gauri/scene/scene_serializer.h"
 
 namespace gauri
 {
@@ -78,6 +79,9 @@ void EditorLayer::OnAttach()
     m_SecondCamera.AddComponent<NativeScriptComponent>().Bind<CameraController>();
 
     m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+
+    SceneSerializer serializer(m_ActiveScene);
+    serializer.SerializeText("assets/scenes/Example.gauri");
 }
 
 void EditorLayer::OnDetach()
