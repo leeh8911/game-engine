@@ -1,6 +1,7 @@
 <map id="gauri::EditorLayer::OnImGuiRender" name="gauri::EditorLayer::OnImGuiRender">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,253,57"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,253,83"/>
 <area shape="rect" id="node2" href="$classgauri_1_1SceneHierarchyPanel.html#ab3606cea4c4f011374fc31c352afdb8e" title=" " alt="" coords="301,31,612,57"/>
+<area shape="rect" id="node6" href="$classgauri_1_1SceneHierarchyPanel.html#a073f2d95cd8d8b04975b724388ce29b9" title=" " alt="" coords="317,81,597,108"/>
 <area shape="rect" id="node3" href="$classgauri_1_1SceneHierarchyPanel.html#a9144740cb48b4a524479ec129857d898" title=" " alt="" coords="660,5,984,32"/>
 <area shape="rect" id="node5" href="$classgauri_1_1SceneHierarchyPanel.html#ac786ab8a880c239274af1ce3a26351af" title=" " alt="" coords="665,56,979,83"/>
 <area shape="rect" id="node4" href="$namespacegauri.html#afd9399fc349c8e2f2c0377351d7460a5" title=" " alt="" coords="1032,5,1207,32"/>
