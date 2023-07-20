@@ -6,7 +6,7 @@
 
 ### TODO
 
-<https://youtu.be/zn7N7zHgCcs?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
+<https://youtu.be/zn7N7zHgCcs?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=954>
 
 ## 0721
 

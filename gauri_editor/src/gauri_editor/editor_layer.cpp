@@ -5,6 +5,7 @@
 #include <imgui.h>
 
 #include "gauri/scene/scene_serializer.h"
+#include "gauri/utils/platform_utils.h"
 
 namespace gauri
 {
@@ -188,15 +189,34 @@ void EditorLayer::OnImGuiRender()
         {
             // Disabling fullscreen would allow the window to be moved to the front of other windows,
             // which we can't undo at the moment without finer window depth/z control.
-            if (ImGui::MenuItem("Serialze"))
+            if (ImGui::MenuItem("New", "Ctrl+N"))
             {
-                SceneSerializer serializer(m_ActiveScene);
-                serializer.Serialize("assets/scenes/Example.gauri");
+                m_ActiveScene = CreateRef<Scene>();
+                m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+                m_SceneHierarchyPanel.SetContext(m_ActiveScene);
             }
-            if (ImGui::MenuItem("Deserialize"))
+
+            if (ImGui::MenuItem("Open...", "Ctrl+O"))
             {
-                SceneSerializer serializer(m_ActiveScene);
-                serializer.Deserialize("assets/scenes/Example.gauri");
+                std::string filepath = FileDialogs::OpenFile("Gauri Scene (*.gauri)\0*.gauri\0");
+                if (!filepath.empty())
+                {
+                    m_ActiveScene = CreateRef<Scene>();
+                    m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+                    m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+
+                    SceneSerializer serializer(m_ActiveScene);
+                    serializer.Deserialize(filepath);
+                }
+            }
+            if (ImGui::MenuItem("Save As...", "Ctrl+S"))
+            {
+                std::string filepath = FileDialogs::SaveFile("Gauri Scene (*.gauri)\0*.gauri\0");
+                if (!filepath.empty())
+                {
+                    SceneSerializer serializer(m_ActiveScene);
+                    serializer.Serialize(filepath);
+                }
             }
             if (ImGui::MenuItem("Exit"))
             {
