@@ -1,6 +1,10 @@
 <map id="gauri::SceneHierarchyPanel::SetContext" name="gauri::SceneHierarchyPanel::SetContext">
-<area shape="rect" id="node1" title=" " alt="" coords="399,56,679,83"/>
-<area shape="rect" id="node2" href="$classgauri_1_1EditorLayer.html#a56743b3b2eaeaed03e30123051861eff" title=" " alt="" coords="75,5,281,32"/>
-<area shape="rect" id="node3" href="$classgauri_1_1EditorLayer.html#a0ef45ba01458f29faaaa12336e619ff0" title=" " alt="" coords="54,56,302,83"/>
-<area shape="rect" id="node4" href="$classgauri_1_1SceneHierarchyPanel.html#a233397278fcd56deb207b8fc4f27f1e3" title=" " alt="" coords="5,107,351,133"/>
+<area shape="rect" id="node1" title=" " alt="" coords="943,81,1223,108"/>
+<area shape="rect" id="node2" href="$classgauri_1_1EditorLayer.html#ab384f23d003691c354eaffade96057ee" title=" " alt="" coords="615,5,829,32"/>
+<area shape="rect" id="node6" href="$classgauri_1_1EditorLayer.html#a56743b3b2eaeaed03e30123051861eff" title=" " alt="" coords="619,107,825,133"/>
+<area shape="rect" id="node7" href="$classgauri_1_1EditorLayer.html#a8c57055c9d8687ed121c07190ab77c88" title=" " alt="" coords="613,56,831,83"/>
+<area shape="rect" id="node8" href="$classgauri_1_1SceneHierarchyPanel.html#a233397278fcd56deb207b8fc4f27f1e3" title=" " alt="" coords="549,157,895,184"/>
+<area shape="rect" id="node3" href="$classgauri_1_1EditorLayer.html#a0ef45ba01458f29faaaa12336e619ff0" title=" " alt="" coords="253,5,501,32"/>
+<area shape="rect" id="node4" href="$classgauri_1_1EditorLayer.html#ab6a80d3d6ce89ceacd4f1e4bd5023f17" title=" " alt="" coords="258,56,497,83"/>
+<area shape="rect" id="node5" href="$classgauri_1_1EditorLayer.html#a08b3d9c379dcfa1cfc7a9ec92893c4d9" title=" " alt="" coords="5,56,205,83"/>
 </map>
