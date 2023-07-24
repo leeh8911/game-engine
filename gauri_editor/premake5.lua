@@ -31,6 +31,7 @@
     {
         "%{wks.location}/gauri/3rdparty/spdlog/include",
         "%{IncludeDir.imgui}",
+        "%{IncludeDir.ImGuizmo}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
     }

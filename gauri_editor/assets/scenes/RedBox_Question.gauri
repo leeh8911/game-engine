@@ -1,0 +1,74 @@
+Scene: Untitled
+Entities:
+  - Entity: 62434624462
+    TagComponent:
+      Tag: top
+    TransformComponent:
+      Translation: [0.5, 0.800000012, 0.200000003]
+      Rotation: [1.57079637, 0, 0]
+      Scale: [1, 1, 1]
+    SpriteRendererComponent:
+      Color: [1, 0, 0, 1]
+  - Entity: 62434624462
+    TagComponent:
+      Tag: Left
+    TransformComponent:
+      Translation: [1.29999995, 0.5, 0]
+      Rotation: [0, 1.57079637, 0]
+      Scale: [1, 1, 1]
+    SpriteRendererComponent:
+      Color: [1, 0, 0, 1]
+  - Entity: 62434624462
+    TagComponent:
+      Tag: Right
+    TransformComponent:
+      Translation: [0.300000012, 0.400000006, 0]
+      Rotation: [0, 1.57079637, 0]
+      Scale: [1, 1, 1]
+    SpriteRendererComponent:
+      Color: [1, 0, 0, 1]
+  - Entity: 62434624462
+    TagComponent:
+      Tag: Front
+    TransformComponent:
+      Translation: [0, 0, 1.10000002]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    SpriteRendererComponent:
+      Color: [1, 0, 0, 1]
+  - Entity: 62434624462
+    TagComponent:
+      Tag: Back
+    TransformComponent:
+      Translation: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    SpriteRendererComponent:
+      Color: [1, 0, 0, 1]
+  - Entity: 62434624462
+    TagComponent:
+      Tag: Camera
+    TransformComponent:
+      Translation: [-12.6000004, -6.9000001, 10.6000004]
+      Rotation: [0.548033357, -1.02625358, -0.111701071]
+      Scale: [1, 1, 1]
+    CameraComponent:
+      Camera:
+        ProjectionType: 0
+        PerspectiveVerticalFov: 45
+        PerspectiveNearClip: 0.00999999978
+        PerspectiveFarClip: 1000
+        OrthographicSize: 10
+        OrthographicNearClip: -1
+        OrthographicFarClip: 1
+      Primary: true
+      FixedAspectRatio: false
+  - Entity: 62434624462
+    TagComponent:
+      Tag: Bottom
+    TransformComponent:
+      Translation: [0.899999976, 0, 0]
+      Rotation: [-1.57079637, 0, 0]
+      Scale: [1.00000811, 1, 1.00000083]
+    SpriteRendererComponent:
+      Color: [1, 0, 0, 1]
