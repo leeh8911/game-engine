@@ -19,6 +19,12 @@ class EditorLayer : public Layer
     void OnEvent(Event &event) override;
 
   private:
+    bool OnKeyPressed(KeyPressedEvent &e);
+
+    void NewScene();
+    void OpenScene();
+    void SaveSceneAs();
+
     OrthographicCameraController m_CameraController;
 
     // Temp

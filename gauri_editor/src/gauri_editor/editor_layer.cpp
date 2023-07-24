@@ -191,33 +191,18 @@ void EditorLayer::OnImGuiRender()
             // which we can't undo at the moment without finer window depth/z control.
             if (ImGui::MenuItem("New", "Ctrl+N"))
             {
-                m_ActiveScene = CreateRef<Scene>();
-                m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
-                m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+                NewScene();
             }
 
             if (ImGui::MenuItem("Open...", "Ctrl+O"))
             {
-                std::string filepath = FileDialogs::OpenFile("Gauri Scene (*.gauri)\0*.gauri\0");
-                if (!filepath.empty())
-                {
-                    m_ActiveScene = CreateRef<Scene>();
-                    m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
-                    m_SceneHierarchyPanel.SetContext(m_ActiveScene);
-
-                    SceneSerializer serializer(m_ActiveScene);
-                    serializer.Deserialize(filepath);
-                }
+                OpenScene();
             }
             if (ImGui::MenuItem("Save As...", "Ctrl+S"))
             {
-                std::string filepath = FileDialogs::SaveFile("Gauri Scene (*.gauri)\0*.gauri\0");
-                if (!filepath.empty())
-                {
-                    SceneSerializer serializer(m_ActiveScene);
-                    serializer.Serialize(filepath);
-                }
+                SaveSceneAs();
             }
+
             if (ImGui::MenuItem("Exit"))
             {
                 Application::Get().Close();
@@ -261,6 +246,82 @@ void EditorLayer::OnImGuiRender()
 void EditorLayer::OnEvent(Event &event)
 {
     m_CameraController.OnEvent(event);
+
+    EventDispatcher dispatcher(event);
+    dispatcher.Dispatch<KeyPressedEvent>(GR_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
+}
+
+bool EditorLayer::OnKeyPressed(KeyPressedEvent &e)
+{
+    // Shortcuts
+    if (e.GetRepeatCount() > 0)
+    {
+        return false;
+    }
+
+    bool control = Input::IsKeyPressed(GR_KEY_LEFT_CONTROL) || Input::IsKeyPressed(GR_KEY_RIGHT_CONTROL);
+
+    bool shift = Input::IsKeyPressed(GR_KEY_LEFT_SHIFT) || Input::IsKeyPressed(GR_KEY_RIGHT_SHIFT);
+
+    switch (e.GetKeyCode())
+    {
+    case GR_KEY_S: {
+        if (control)
+        {
+            SaveSceneAs();
+            return true;
+        }
+        break;
+    }
+    case GR_KEY_O: {
+        if (control)
+        {
+            OpenScene();
+            return true;
+        }
+        break;
+    }
+    case GR_KEY_N: {
+        if (control)
+        {
+            NewScene();
+            return true;
+        }
+        break;
+    }
+    }
+    return false;
+}
+
+void EditorLayer::NewScene()
+{
+    m_ActiveScene = CreateRef<Scene>();
+    m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+    m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+}
+
+void EditorLayer::OpenScene()
+{
+    std::string filepath = FileDialogs::OpenFile("Gauri Scene (*.gauri)\0*.gauri\0");
+    if (!filepath.empty())
+    {
+        m_ActiveScene = CreateRef<Scene>();
+        m_ActiveScene->OnViewportResize((uint32_t)m_ViewportSize.x, (uint32_t)m_ViewportSize.y);
+        m_SceneHierarchyPanel.SetContext(m_ActiveScene);
+
+        SceneSerializer serializer(m_ActiveScene);
+        serializer.Deserialize(filepath);
+    }
+}
+
+void EditorLayer::SaveSceneAs()
+{
+    std::string filepath = FileDialogs::SaveFile("Gauri Scene (*.gauri)\0*.gauri\0");
+    if (!filepath.empty())
+    {
+        SceneSerializer serializer(m_ActiveScene);
+        serializer.Serialize(filepath);
+    }
 }
 
 } // namespace gauri
