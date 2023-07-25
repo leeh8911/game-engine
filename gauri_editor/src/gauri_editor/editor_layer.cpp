@@ -178,7 +178,7 @@ void EditorLayer::OnImGuiRender()
 
     m_ViewportFocused = ImGui::IsWindowFocused();
     m_ViewportHovered = ImGui::IsWindowHovered();
-    Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused || !m_ViewportHovered);
+    Application::Get().GetImGuiLayer()->BlockEvents(!m_ViewportFocused && !m_ViewportHovered);
 
     ImVec2 viewportPanelSize = ImGui::GetContentRegionAvail();
     m_ViewportSize = {viewportPanelSize.x, viewportPanelSize.y};
@@ -187,7 +187,6 @@ void EditorLayer::OnImGuiRender()
     ImGui::Image(reinterpret_cast<void *>(textureID), ImVec2{m_ViewportSize.x, m_ViewportSize.y}, ImVec2{0, 1},
                  ImVec2{1, 0});
 
-    m_GuizmoType = ImGuizmo::OPERATION::ROTATE;
     // Gizmos
     Entity selectedEntity = m_SceneHierarchyPanel.GetSelectedEntity();
     if (selectedEntity && m_GuizmoType != -1)
@@ -209,9 +208,20 @@ void EditorLayer::OnImGuiRender()
         auto &tc = selectedEntity.GetComponent<TransformComponent>();
         glm::mat4 transform = tc.GetTransform();
 
+        // Snapping
+        bool snap = Input::IsKeyPressed(GR_KEY_LEFT_CONTROL);
+        float snapValue = 0.5f; // Snap to 0.5m for translation and scale
+        // Snap to 45 degrees for rotation
+        if (m_GuizmoType == ImGuizmo::OPERATION::ROTATE)
+        {
+            snapValue = 45.0f;
+        }
+        float snapValues[3] = {snapValue, snapValue, snapValue};
+
         ImGuizmo::Manipulate(glm::value_ptr(cameraView), glm::value_ptr(cameraProjection),
-                             static_cast<ImGuizmo::OPERATION>(m_GuizmoType), ImGuizmo::LOCAL,
-                             glm::value_ptr(transform));
+                             static_cast<ImGuizmo::OPERATION>(m_GuizmoType), ImGuizmo::LOCAL, glm::value_ptr(transform),
+                             nullptr, snap ? snapValues : nullptr);
+
         if (ImGuizmo::IsUsing())
         {
             glm::vec3 translation, rotation, scale;
@@ -277,6 +287,20 @@ bool EditorLayer::OnKeyPressed(KeyPressedEvent &e)
         }
         break;
     }
+
+        // Gizmos
+    case GR_KEY_Q:
+        m_GuizmoType = -1;
+        break;
+    case GR_KEY_W:
+        m_GuizmoType = static_cast<int>(ImGuizmo::OPERATION::TRANSLATE);
+        break;
+    case GR_KEY_E:
+        m_GuizmoType = static_cast<int>(ImGuizmo::OPERATION::ROTATE);
+        break;
+    case GR_KEY_R:
+        m_GuizmoType = static_cast<int>(ImGuizmo::OPERATION::SCALE);
+        break;
     }
     return false;
 }
