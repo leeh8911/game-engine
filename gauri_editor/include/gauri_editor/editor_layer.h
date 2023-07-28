@@ -2,6 +2,7 @@
 
 #include "gauri.h"
 
+#include "gauri/renderer/editor_camera.h"
 #include "gauri_editor/panels/scene_hierarchy_panel.h"
 
 namespace gauri
@@ -38,6 +39,8 @@ class EditorLayer : public Layer
     Entity m_SecondCamera;
 
     bool m_PrimaryCamera = true;
+
+    EditorCamera m_EditorCamera;
 
     Ref<Texture2D> m_CheckerboardTexture = nullptr;
 
