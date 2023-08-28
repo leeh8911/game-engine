@@ -20,10 +20,11 @@ var searchData=
   ['m_5fsquarecolor_30',['m_SquareColor',['../classgauri_1_1EditorLayer.html#acf4b6028f7d2dcba933f17819fc92976',1,'gauri::EditorLayer::m_SquareColor()'],['../classExampleLayer.html#a64fd6b3243c440d1c416b05a8840fa8c',1,'ExampleLayer::m_SquareColor()'],['../classSandbox2D.html#aff3d8f0fa9513e5ef73f72b338fea3dc',1,'Sandbox2D::m_SquareColor()']]],
   ['m_5fsquareentity_31',['m_SquareEntity',['../classgauri_1_1EditorLayer.html#a3478723232919e16cec42e976d74cc98',1,'gauri::EditorLayer']]],
   ['m_5fsquarespeed_32',['m_SquareSpeed',['../classExampleLayer.html#a1b543b8150e2a1637f930caac35c924b',1,'ExampleLayer']]],
-  ['m_5fsquareva_33',['m_SquareVA',['../classgauri_1_1EditorLayer.html#a3bd998f2c55ba20254547a9c3bf11e7b',1,'gauri::EditorLayer::m_SquareVA()'],['../classExampleLayer.html#a42ce26b361a089296599a43526bcf2ff',1,'ExampleLayer::m_SquareVA()'],['../classSandbox2D.html#a4babcbb41013ae385237518b82fee834',1,'Sandbox2D::m_SquareVA()']]],
+  ['m_5fsquareva_33',['m_SquareVA',['../classgauri_1_1EditorLayer.html#a3bd998f2c55ba20254547a9c3bf11e7b',1,'gauri::EditorLayer::m_SquareVA()'],['../classSandbox2D.html#a4babcbb41013ae385237518b82fee834',1,'Sandbox2D::m_SquareVA()'],['../classExampleLayer.html#a42ce26b361a089296599a43526bcf2ff',1,'ExampleLayer::m_SquareVA()']]],
   ['m_5ftexture_34',['m_Texture',['../classExampleLayer.html#a3c66896cba5d9f43e403431cbb3503f9',1,'ExampleLayer']]],
   ['m_5fvertexarray_35',['m_VertexArray',['../classExampleLayer.html#a6ada94e7a1a8a131c55b3b93e75e888a',1,'ExampleLayer']]],
-  ['m_5fviewportfocused_36',['m_ViewportFocused',['../classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3',1,'gauri::EditorLayer']]],
-  ['m_5fviewporthovered_37',['m_ViewportHovered',['../classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5',1,'gauri::EditorLayer']]],
-  ['m_5fviewportsize_38',['m_ViewportSize',['../classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b',1,'gauri::EditorLayer']]]
+  ['m_5fviewportbounds_36',['m_ViewportBounds',['../classgauri_1_1EditorLayer.html#adbddee62b957b39a65303f67860db2a0',1,'gauri::EditorLayer']]],
+  ['m_5fviewportfocused_37',['m_ViewportFocused',['../classgauri_1_1EditorLayer.html#aad6fbdf2cdabcf0cb5818d6d1f873da3',1,'gauri::EditorLayer']]],
+  ['m_5fviewporthovered_38',['m_ViewportHovered',['../classgauri_1_1EditorLayer.html#a82a931bcbd70343ee44fd52f06fdb5e5',1,'gauri::EditorLayer']]],
+  ['m_5fviewportsize_39',['m_ViewportSize',['../classgauri_1_1EditorLayer.html#aba5a201026b8ef906ffebd1e99c0986b',1,'gauri::EditorLayer']]]
 ];
