@@ -6,9 +6,11 @@
 
 ### TODO
 
+## 0829
+
 <https://youtu.be/wYVaIOUhz6s?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT>
 
-## 0829
+## 0828
 
 <https://youtu.be/f-GbHye1VFQ?list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&t=1965>
 
